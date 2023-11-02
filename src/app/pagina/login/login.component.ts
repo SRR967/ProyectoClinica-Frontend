@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginDto } from 'src/app/modelo/loginDto';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  loginDto: LoginDto;
+
+  constructor(){
+    this.loginDto = new LoginDto;
+  }
+
+  ingresar(){
+    console.log(this.loginDto)
+  }
+
 
 }

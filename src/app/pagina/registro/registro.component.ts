@@ -10,10 +10,14 @@ import { CrearPacienteDto } from 'src/app/modelo/crear-paciente-dto';
 export class RegistroComponent {
 
   crearPacienteDto: CrearPacienteDto
+  ciudad:String[];
   eps:string[];
   tipoSangre:string[];
+  archivos!:FileList;
 
   constructor(){
+    this.ciudad=[];
+    this.cargarCiudades();
     this.eps=[];
     this.cargarEps();
     this.tipoSangre=[];
@@ -22,12 +26,24 @@ export class RegistroComponent {
   }
   
   public registrar(){
-    console.log(this.crearPacienteDto);
+    if(this.archivos != null && this.archivos.length > 0){
+      console.log(this.crearPacienteDto);
+      }else{
+      console.log("Debe cargar una foto");
+      }
   }
 
   public sonIguales():boolean{
     return this.crearPacienteDto.contrasena == this.crearPacienteDto.confirmarContrasena;
   }
+
+  private cargarCiudades(){
+    this.ciudad.push("Armenia");
+    this.ciudad.push("Calarcá");
+    this.ciudad.push("Pereira");
+    this.ciudad.push("Manizales");
+    this.ciudad.push("Medellín");
+    }
 
   private cargarEps(){
     this.eps.push("Cafesalud")
@@ -44,4 +60,10 @@ export class RegistroComponent {
     this.tipoSangre.push("O-");
   }
 
+  public onFileChange(event:any){
+    if (event.target.files.length > 0) {
+    this.archivos = event.target.files;
+    console.log(this.archivos);
+    }
+  }
 }

@@ -22,12 +22,15 @@
 
     <div>
         <label>Foto: </label>
-        <input type="text" name="foto" required="true" [(ngModel)]="crearPacienteDto.foto" />
+        <input type="file" name="foto" (change)="onFileChange($event)" />
     </div>
 
     <div>
         <label>Ciudad: </label>
-        <input type="text" name="ciudad" required="true" [(ngModel)]="crearPacienteDto.ciudad" />
+        <select name="ciudad" required [(ngModel)]="crearPacienteDto.ciudad">
+            <option value="" selected>Selecione una ciudad</option>
+            <option [value]="item" *ngFor="let item of ciudad; index as i">{{item}}</option>
+        </select>
     </div>
 
     <div>
