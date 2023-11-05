@@ -1,11 +1,14 @@
 <form #f="ngForm" (ngSubmit)="ingresar()">
-    <div>
-        <label>Correo</label>
-        <input type="email" name="correo" email="true" required="true" [(ngModel)]="loginDto.email">
+
+    <div class="form-floating mb-3" >    
+        <input type="email" name="correo" email="true" class="form-control" placeholder=""
+        required="true" [(ngModel)]="loginDto.email">
+        <label for="floatingInput" >Correo</label>
     </div>
-    <div>
-        <label>Contraseña</label>
-        <input type="password" name="contrasena" required="true" [(ngModel)]="loginDto.contrasena">
+    <div class="form-floating mb-3" >
+        <input type="password" name="contrasena" class="form-control" placeholder=""
+        required="true" [(ngModel)]="loginDto.contrasena">
+        <label for="floatingInput" >Contraseña</label>
     </div>
     <button type="submit" [disabled]="f.invalid" >Ingresar</button>
 </form>

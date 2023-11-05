@@ -33,8 +33,12 @@ export class RegistroComponent {
       }
   }
 
-  public sonIguales():boolean{
+  public sonIgualesContrasena():boolean{
     return this.crearPacienteDto.contrasena == this.crearPacienteDto.confirmarContrasena;
+  }
+
+  public sonIgualesEmail():boolean{
+    return this.crearPacienteDto.email == this.crearPacienteDto.confirmarEmail;
   }
 
   private cargarCiudades(){
