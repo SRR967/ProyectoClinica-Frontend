@@ -3,9 +3,30 @@ body{
     background-color: rgb(230, 255, 217);
 }
 
+main{
+    margin: 20px 0;
+    height: 66vh;
+    max-height: 66vh;
+    overflow-y: auto;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+.card{
+    height: 94vh;
+}
+
 .card-space{
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     margin-right: 70px;
     margin-left: 70px;
+}
+
+
+.logo-size{
+    width: 250px;
 }
