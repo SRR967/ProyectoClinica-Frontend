@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { InicioComponent } from './pagina/inicio/inicio.component';
 import { LoginComponent } from './pagina/login/login.component';
 import { RegistroComponent } from './pagina/registro/registro.component';
+import { RecuperarContrasenaComponent } from './pagina/recuperar-contrasena/recuperar-contrasena.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { RegistroComponent } from './pagina/registro/registro.component';
     AppComponent,
     InicioComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    RecuperarContrasenaComponent
   ],
 
   imports: [
