@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { PQRSpacienteDto } from '../modelo/PQRSpacienteDto';
-import {CrearPqrsDto} from '../modelo/crearPqrsDto';
+import { PQRSpacienteDto } from '../modelo/dto/paciente/pqrsPacienteDto';
+import {CrearPqrsDto} from '../modelo/dto/paciente/crearPqrsDto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PqrsService {
-  
+
   pqrs: PQRSpacienteDto[];
 
   constructor() {

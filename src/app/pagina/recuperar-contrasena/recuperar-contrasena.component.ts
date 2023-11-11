@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RecuperarContrasenaDto } from 'src/app/modelo/recuperarContrasenaDto';
+import { RecuperarContrasenaDto } from 'src/app/modelo/dto/recuperarContrasenaDto';
 
 @Component({
   selector: 'app-recuperar-contrasena',

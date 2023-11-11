@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CrearPacienteDto } from 'src/app/modelo/crear-paciente-dto';
+import { CrearPacienteDto } from 'src/app/modelo/dto/paciente/crear-paciente-dto';
 
 @Component({
   selector: 'app-registro',
@@ -24,7 +24,7 @@ export class RegistroComponent {
     this.cargarTipoSangre();
     this.crearPacienteDto = new CrearPacienteDto();
   }
-  
+
   public registrar(){
     if(this.archivos != null && this.archivos.length > 0){
       console.log(this.crearPacienteDto);
