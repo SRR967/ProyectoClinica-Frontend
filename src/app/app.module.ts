@@ -9,6 +9,7 @@ import { LoginComponent } from './pagina/login/login.component';
 import { RegistroComponent } from './pagina/registro/registro.component';
 import { RecuperarContrasenaComponent } from './pagina/recuperar-contrasena/recuperar-contrasena.component';
 import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.component';
+import { ImagenesComponent } from './pagina/imagenes/imagenes.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.compone
     LoginComponent,
     RegistroComponent,
     RecuperarContrasenaComponent,
-    GestionPqrsComponent
+    GestionPqrsComponent,
+    ImagenesComponent
   ],
 
   imports: [
