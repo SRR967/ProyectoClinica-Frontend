@@ -1,0 +1,44 @@
+
+.body-function{
+    height: 74vh;
+    position: relative;
+}
+
+.abajo{
+    position: absolute;
+    bottom: 0   ;
+}
+
+.btn-menu{
+    background-color: rgba(0, 0, 0, 0);
+    width: 98%;
+    border-width: 1px;
+    border-color: #006E0E;
+    border-style: solid;
+    color: #006E0E;
+    border-radius: 25px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 5px auto 5px;
+    font-size: 13px;
+    transition: 0.5s;
+}
+
+.btn-menu:hover{
+    background-color: #008e13;
+    color: #e6e6e6;
+}
+
+.btn-function{
+    background-color: #bdffb3;
+    width: 98%;
+    color: #4c7a52;
+    border-radius: 15px;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin: 6px auto 6px;
+    font-size: 13px;
+    transition: 0.5s;
+    border: none;
+}
+

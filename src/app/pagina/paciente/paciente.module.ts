@@ -9,6 +9,7 @@ import { ListarCitasComponent } from './listar-citas/listar-citas.component';
 import { ListarConsultasComponent } from './listar-consultas/listar-consultas.component';
 import { DetalleConsultaComponent } from './detalle-consulta/detalle-consulta.component';
 import { ResponderPQRSComponent } from './responder-pqrs/responder-pqrs.component';
+import { PacienteInicioComponent } from './paciente-inicio/paciente-inicio.component';
 
 
 
@@ -22,7 +23,8 @@ import { ResponderPQRSComponent } from './responder-pqrs/responder-pqrs.componen
     ListarCitasComponent,
     ListarConsultasComponent,
     DetalleConsultaComponent,
-    ResponderPQRSComponent
+    ResponderPQRSComponent,
+    PacienteInicioComponent
   ],
   imports: [
     CommonModule

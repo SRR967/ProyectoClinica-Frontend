@@ -1,12 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-    background-color: rgb(230, 255, 217);
+    background-color: rgb(219, 255, 210);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
+
 
 main{
     margin: 20px 0;
-    height: 66vh;
-    max-height: 66vh;
+    height: 74vh;
+    max-height: 74vh;
     overflow-y: auto;
 }
 
@@ -15,19 +18,84 @@ footer{
     bottom: 0;
 }
 
-.card{
-    height: 94vh;
-}
-
 .card-space{
+    height: 94vh;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-right: 70px;
     margin-left: 70px;
 }
 
+.card{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 
 .logo-size{
-    margin: 10vh 0;
-    width: 30vh;
+    width: 35vh;
+    margin-top: 3vh;
+}
+
+.phrase-logo{
+    font-size: 10vh;
+    font-weight: 400;
+    color: #006E0E;
+    margin-top: -1vh;
+}
+
+.title-login{
+    font-size: 40px;
+    font-weight: 300;
+    color: #006E0E;
+    margin: 15px 0;
+}
+
+.btn-customize-pr{
+    background-color: #006E0E;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn-customize-pr:disabled{
+    background-color: #5aa163;
+}
+
+.btn-customize-pr:enabled:hover{
+    background-color: #008e13;
+}
+
+.btn-outliner{
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 1px;
+    border-color: #006E0E;
+    border-style: solid;
+    color: #006E0E;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 20px auto 10px;
+}
+
+.text-btn{
+    font-weight: 300;
+}
+
+
+.link-recover{
+    text-align: right;
+    margin-top: 30px;
+    font-weight: 300;
+}
+
+hr{
+    margin: 10px;
+}
+
+a{
+    outline: none;
+    text-decoration: none;
+    color: #008e13;
 }

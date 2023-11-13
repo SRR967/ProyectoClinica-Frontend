@@ -1,0 +1,36 @@
+.background-inicio{
+    background-image: url(../../../assets/images/wave1.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 150%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle{
+    width: 45vh;
+    height: 45vh;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-color: #39E43E;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.logo-inicio{
+    width: 16vh;
+    margin: 0 50px;
+}
+
+.phrase-logo-inicio{
+    font-size: 5vh;
+    font-weight: 400;
+    color: #006E0E;
+    margin-top: -1vh;
+}
