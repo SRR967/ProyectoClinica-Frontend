@@ -24,6 +24,11 @@
     transition: 0.5s;
 }
 
+.body-function .btn-menu:hover{
+    background-color: #008e13;
+    color: #e6e6e6;
+}
+
 .btn-menu{
     background-color: rgba(0, 0, 0, 0);
     width: 98%;
@@ -112,7 +117,7 @@
 }
 
 .img-card-info{
-    background-image: url(../../../../assets/images/imagen3.jpg);
+    background-image: url(../../../../assets/images/imagen2.jpg);
     height: 100%;
     background-size: cover;
 }
