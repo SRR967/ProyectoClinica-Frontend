@@ -2,18 +2,18 @@
 
     <div class="body-login" >
         <div class="container align-items-center">
-            <div class="row text-center align-items-center">
-                <div class="col-8">
+            <div class="row">
+                <div class="logo col-xl-6 col-lg-6 col-md-6 d-none d-md-block">
                     <img class="logo-size" src="../../../assets/images/LogoTucanic.png" alt="">
                     <p class="phrase-logo">TuCanic</p>
                 </div>
-                <div class="col-4">
+                <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <div class="card">
                         <div class="card-body">
                             <p class="title-login">
                                 Iniciar Sesión
                             </p>
-                            <div class="form-floating mb-3 form-size" >    
+                            <div class="form-floating mb-3 form-size" >
                                 <input type="email" name="correo" email="true" class="form-control" placeholder=""
                                 required="true" [(ngModel)]="loginDto.email">
                                 <label for="floatingInput" >Correo</label>
@@ -33,11 +33,11 @@
                             <button class="btn-outliner" type="submit" routerLink="/registro" >Registrarme</button>
 
                         </div>
-                    </div>         
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    
+
 </form>

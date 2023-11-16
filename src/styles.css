@@ -30,13 +30,13 @@ footer{
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.logo-size{
-    width: 35vh;
-    margin-top: 3vh;
+.logo img {
+    height: 350px;
+    width: auto;
 }
 
 .phrase-logo{
-    font-size: 10vh;
+    font-size: 8vh;
     font-weight: 400;
     color: #006E0E;
     margin-top: -1vh;
