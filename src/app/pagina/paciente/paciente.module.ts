@@ -10,6 +10,7 @@ import { ListarConsultasComponent } from './listar-consultas/listar-consultas.co
 import { DetalleConsultaComponent } from './detalle-consulta/detalle-consulta.component';
 import { ResponderPQRSComponent } from './responder-pqrs/responder-pqrs.component';
 import { PacienteInicioComponent } from './paciente-inicio/paciente-inicio.component';
+import { PacienteInicioBodyComponent } from './paciente-inicio-body/paciente-inicio-body.component';
 
 
 
@@ -24,7 +25,8 @@ import { PacienteInicioComponent } from './paciente-inicio/paciente-inicio.compo
     ListarConsultasComponent,
     DetalleConsultaComponent,
     ResponderPQRSComponent,
-    PacienteInicioComponent
+    PacienteInicioComponent,
+    PacienteInicioBodyComponent
   ],
   imports: [
     CommonModule
