@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PqrsService } from "c:/Users/User/MainWorkSpace/Programacion Avanzada/ProyectoClinica-Frontend/my-app/src/app/servicios/pqrs.service";
+import PQRSpacienteDto from '../../modelo/dto/paciente/PqrsPacienteDto';
 
 @Component({
   selector: 'app-gestion-pqrs',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./gestion-pqrs.component.css']
 })
 export class GestionPqrsComponent {
+
+  pqrs: PQRSpacienteDto[];
+
+  constructor(private pqrsService: PqrsService){
+    this.pqrs = pqrsService.listar();
+  }
 
 }
