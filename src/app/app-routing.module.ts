@@ -8,13 +8,13 @@ import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.compone
 import { PacienteInicioComponent } from './pagina/paciente/paciente-inicio/paciente-inicio.component';
 
 const routes: Routes = [
-  {path: "inicio", component: InicioComponent},
+  {path: '', redirectTo:'/inicio', pathMatch: 'full'},
+  {path: 'inicio', component: InicioComponent},
   {path: "login", component: LoginComponent},
   {path: "registro", component: RegistroComponent},
   {path: "recuperarContrasena", component: RecuperarContrasenaComponent},
   {path: "pacienteInicio", component: PacienteInicioComponent},
   {path: "gestionPqrs", component:GestionPqrsComponent},
-  {path: "*", pathMatch: "full", redirectTo: ""}
 ];
 
 @NgModule({
