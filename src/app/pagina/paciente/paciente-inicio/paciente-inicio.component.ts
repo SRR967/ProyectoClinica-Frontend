@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PacienteInicioBodyComponent } from '../paciente-inicio-body/paciente-inicio-body.component';
 
 @Component({
   selector: 'app-paciente-inicio',
@@ -12,6 +11,10 @@ export class PacienteInicioComponent {
 
   // Método para mostrar inicioPacienteBody cuando sea necesario
   mostrarComponenteBody() {
+    this.mostrarInicioPacienteBody = true;
+  }
+
+  mostrarComponenteGestionPqrs() {
     this.mostrarInicioPacienteBody = true;
   }
 }

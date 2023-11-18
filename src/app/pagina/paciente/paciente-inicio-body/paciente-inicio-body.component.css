@@ -1,0 +1,103 @@
+.btn-menu{
+    background-color: rgba(0, 0, 0, 0);
+    width: 98%;
+    border-width: 1px;
+    border-color: #006E0E;
+    border-style: solid;
+    color: #006E0E;
+    border-radius: 25px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 20px 10px;
+    font-size: 13px;
+    transition: 0.5s;
+}
+
+.btn-menu:hover{
+    background-color: #008e13;
+    color: #e6e6e6;
+}
+
+
+.btn-function{
+    background-color: #bdffb3;
+    width: 98%;
+    color: #4c7a52;
+    border-radius: 15px;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin: 6px auto 6px;
+    font-size: 13px;
+    transition: 0.5s;
+    border: none;
+}
+
+.head-window{
+    width: 100%;
+    align-items: center;
+    margin: 5px auto 15px;
+    display: flex;
+}
+
+.title-window{
+    font-size: 40px;
+    font-weight: 200;
+    text-align: left;
+    padding: 0 30px;
+    width: 92%;
+    color: #006E0E;
+    display: inline-block;
+}
+
+.user-image{
+    width: 8%;
+    display: inline-block;
+}
+
+.user-image img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.body-window{
+    margin: 30px auto 0;
+    width: 100%;
+    height: 56vh;
+}
+
+.height-complete{
+    height: 100%;
+}
+
+.card-body-window{
+    margin: auto 10%;
+    min-height: 100%;
+    position: relative;
+}
+
+.abajo{
+    position: absolute;
+    bottom: 0   ;
+}
+
+.card-longer{
+    height: 100%;
+}
+
+.title-card-ctz{
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #006E0E;
+}
+
+.img-card-info{
+    background-image: url(../../../../assets/images/imagen2.jpg);
+    height: 100%;
+    background-size: cover;
+}
+
+.card-items-ctz{
+    max-height: 35vh;
+    overflow-y: auto;
+}

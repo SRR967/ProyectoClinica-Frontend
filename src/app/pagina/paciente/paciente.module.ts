@@ -11,8 +11,12 @@ import { DetalleConsultaComponent } from './detalle-consulta/detalle-consulta.co
 import { ResponderPQRSComponent } from './responder-pqrs/responder-pqrs.component';
 import { PacienteInicioComponent } from './paciente-inicio/paciente-inicio.component';
 import { PacienteInicioBodyComponent } from './paciente-inicio-body/paciente-inicio-body.component';
+import { RouterModule, Routes } from '@angular/router';
 
 
+const routes: Routes = [
+  {path: '',  component: PacienteInicioComponent },
+];
 
 @NgModule({
   declarations: [
@@ -25,11 +29,13 @@ import { PacienteInicioBodyComponent } from './paciente-inicio-body/paciente-ini
     ListarConsultasComponent,
     DetalleConsultaComponent,
     ResponderPQRSComponent,
-    PacienteInicioComponent,
-    PacienteInicioBodyComponent
+    PacienteInicioBodyComponent,
+    PacienteInicioComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterModule.forChild(routes)
+  ],
+  exports: [ RouterModule ]
 })
 export class PacienteModule { }

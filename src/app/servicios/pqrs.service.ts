@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+import PqrsPacienteDto from '../modelo/dto/paciente/PqrsPacienteDto';
 import { CrearPQRSDTO } from '../modelo/dto/paciente/crearPqrsDto';
-import PQRSpacienteDto from '../modelo/dto/paciente/PqrsPacienteDto';
 
 
 @Injectable({
@@ -8,7 +8,7 @@ import PQRSpacienteDto from '../modelo/dto/paciente/PqrsPacienteDto';
 })
 export class PqrsService {
 
-  pqrs: PQRSpacienteDto[];
+  pqrs: PqrsPacienteDto[];
 
   constructor(){
     this.pqrs= [];
@@ -19,11 +19,11 @@ export class PqrsService {
      fecha: '2023-10-12'});
   }
 
-  public listar (): PQRSpacienteDto[]{
+  public listar (): PqrsPacienteDto[]{
     return this.pqrs
   }
 
-  public obtener(codigo: number): PQRSpacienteDto | undefined {
+  public obtener(codigo: number): PqrsPacienteDto | undefined {
     return this.pqrs.find(pqrs => pqrs.codigo === codigo);
   }
   

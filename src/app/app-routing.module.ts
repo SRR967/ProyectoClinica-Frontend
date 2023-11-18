@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: "login", component: LoginComponent},
   {path: "registro", component: RegistroComponent},
   {path: "recuperarContrasena", component: RecuperarContrasenaComponent},
-  {path: "pacienteInicio", component: PacienteInicioComponent},
+  {path: "pacienteInicio", loadChildren: () => import( './pagina/paciente/paciente.module' ).then( (m) => m.PacienteModule)  },
   {path: "gestionPqrs", component:GestionPqrsComponent},
 ];
 

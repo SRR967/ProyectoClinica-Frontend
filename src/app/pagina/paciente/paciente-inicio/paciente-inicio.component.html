@@ -12,17 +12,16 @@
                 <button class="btn-function" type="menu">Cerrar Sesión</button>
                 <button class="btn-function" type="menu">Actualizar Datos</button>
                 <button class="btn-function" type="menu">Darme de Baja</button>
-                <div *ngIf="mostrarInicioPacienteBody" ></div>
+                <div  ></div>
             </div>
         </div>
       </div>
       
       <div class="col-10">
 
-        <!-- <div>
-          <app-paciente-inicio-body></app-paciente-inicio-body>
-        </div> -->
-
+        <div>
+          <app-paciente-inicio-body *ngIf="mostrarInicioPacienteBody" ></app-paciente-inicio-body>
+        </div>
         
         <!-- <div class="head-window">
           <div class="title-window">
