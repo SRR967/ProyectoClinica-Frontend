@@ -20,11 +20,11 @@ export class PqrsService {
   }
 
   public listar (): PqrsPacienteDto[]{
-    return this.pqrs
+    return this.pqrs;
   }
 
   public obtener(codigo: number): PqrsPacienteDto | undefined {
-    return this.pqrs.find(pqrs => pqrs.codigo === codigo);
+    return this.pqrs.find(pqrs => pqrs.codigo == codigo);
   }
   
 
