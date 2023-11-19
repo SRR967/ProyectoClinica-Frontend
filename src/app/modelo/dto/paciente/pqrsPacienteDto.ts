@@ -1,8 +1,7 @@
 interface PqrsPacienteDto {
     codigo: number;
-    estadoPQRS: string; // Asegúrate de importar o definir correctamente el tipo EstadoPQRS
+    estadoPQRS: string; 
     asunto: string;
-    fecha: string; // Puedes usar una cadena para representar la fecha o un tipo específico de fecha en TypeScript
+    fecha: string; 
 }
-
 export default PqrsPacienteDto;

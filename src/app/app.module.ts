@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { RegistroComponent } from './pagina/registro/registro.component';
 import { RecuperarContrasenaComponent } from './pagina/recuperar-contrasena/recuperar-contrasena.component';
 import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.component';
 import { ImagenesComponent } from './pagina/imagenes/imagenes.component';
+import { AlertaComponent } from './pagina/alerta/alerta.component';
 
 
 @NgModule({
@@ -20,13 +22,15 @@ import { ImagenesComponent } from './pagina/imagenes/imagenes.component';
     RegistroComponent,
     RecuperarContrasenaComponent,
     GestionPqrsComponent,
-    ImagenesComponent
+    ImagenesComponent,
+    AlertaComponent
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
