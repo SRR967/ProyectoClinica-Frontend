@@ -29,12 +29,16 @@ export class TokenService {
 
   public login(token:string){
     this.setToken(token);
-    this.router.navigate(["/"]);
+    this.router.navigate(["/"]).then(()=> {
+      window.location.reload();
+    });
   }
 
   public logout() {
     window.sessionStorage.clear();
-    this.router.navigate(["/login"]);
+    this.router.navigate(["/login"]).then(()=>{
+      window.location.reload();
+    });
   }
 
   public getCodigo(): string{
@@ -53,6 +57,15 @@ export class TokenService {
       return values.sub;
     } 
     return "";
+  }
+
+  public getRole():string[]{
+    const token = this.getToken();
+    if(token){
+      const values = this.decodePayload(token);
+      return values.rol;
+    }
+    return [];
   }
 
   private decodePayload(token: string): any {

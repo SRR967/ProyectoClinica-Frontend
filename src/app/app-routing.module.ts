@@ -8,6 +8,7 @@ import { PacienteInicioComponent } from './pagina/paciente/paciente-inicio/pacie
 import { CrearPQRSComponent } from './pagina/paciente/crear-pqrs/crear-pqrs.component';
 import { DetallePqrsComponent } from './pagina/paciente/detalle-pqrs/detalle-pqrs.component';
 import { LoginGuard } from './guards/permiso.service';
+import { RolesGuard } from './guards/roles.service';
 
 const routes: Routes = [
   {path: '', redirectTo:'/inicio', pathMatch: 'full'},
@@ -15,9 +16,12 @@ const routes: Routes = [
   {path: "login", component: LoginComponent, canActivate:[LoginGuard]},
   {path: "registro", component: RegistroComponent, canActivate:[LoginGuard]},
   {path: "recuperarContrasena", component: RecuperarContrasenaComponent},
-  {path: "pacienteInicio", loadChildren: () => import( './pagina/paciente/paciente.module' ).then( (m) => m.PacienteModule)  },
-  {path: "crearPqrs", component: CrearPQRSComponent},
-  {path: "detallePqrs/:codigo", component: DetallePqrsComponent}
+  {path: "pacienteInicio", loadChildren: () => import( './pagina/paciente/paciente.module' ).then( (m) => m.PacienteModule),
+    canActivateChild: [RolesGuard], data:{expectedRole:["paciente"]}},
+  {path: "crearPqrs", component: CrearPQRSComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["paciente"]
+  }},
+  {path: "detallePqrs/:codigo", component: DetallePqrsComponent, }
 ];
 
 @NgModule({
