@@ -9,7 +9,7 @@ import { InicioComponent } from './pagina/inicio/inicio.component';
 import { LoginComponent } from './pagina/login/login.component';
 import { RegistroComponent } from './pagina/registro/registro.component';
 import { RecuperarContrasenaComponent } from './pagina/recuperar-contrasena/recuperar-contrasena.component';
-import { GestionPqrsComponent } from './pagina/gestion-pqrs/gestion-pqrs.component';
+import { CrearPQRSComponent } from './pagina/paciente/crear-pqrs/crear-pqrs.component';
 import { ImagenesComponent } from './pagina/imagenes/imagenes.component';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
 
@@ -21,7 +21,7 @@ import { AlertaComponent } from './pagina/alerta/alerta.component';
     LoginComponent,
     RegistroComponent,
     RecuperarContrasenaComponent,
-    GestionPqrsComponent,
+    CrearPQRSComponent,
     ImagenesComponent,
     AlertaComponent
   ],

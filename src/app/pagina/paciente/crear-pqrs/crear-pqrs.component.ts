@@ -8,6 +8,7 @@ import { PqrsService } from 'src/app/servicios/pqrs.service';
   styleUrls: ['./crear-pqrs.component.css']
 })
 export class CrearPQRSComponent {
+  
   crearPqrsDto: CrearPQRSDTO;
 
   constructor(private pqrsService: PqrsService){

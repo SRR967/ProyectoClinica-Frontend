@@ -12,6 +12,7 @@ import { ResponderPQRSComponent } from './responder-pqrs/responder-pqrs.componen
 import { PacienteInicioComponent } from './paciente-inicio/paciente-inicio.component';
 import { PacienteInicioBodyComponent } from './paciente-inicio-body/paciente-inicio-body.component';
 import { RouterModule, Routes } from '@angular/router';
+import { DetallePqrsComponent } from './detalle-pqrs/detalle-pqrs.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,6 @@ const routes: Routes = [
   declarations: [
     DetalleComponent,
     EditarPerfilComponent,
-    CrearPQRSComponent,
     DetalleCitaComponent,
     ListarPQRSComponent,
     ListarCitasComponent,
@@ -30,7 +30,8 @@ const routes: Routes = [
     DetalleConsultaComponent,
     ResponderPQRSComponent,
     PacienteInicioBodyComponent,
-    PacienteInicioComponent
+    PacienteInicioComponent,
+    DetallePqrsComponent
   ],
   imports: [
     CommonModule,
