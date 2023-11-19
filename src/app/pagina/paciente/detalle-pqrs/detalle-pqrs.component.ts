@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DetallePQRSdto } from 'src/app/modelo/dto/paciente/DetallePQRSdto';
-import PqrsPacienteDto from 'src/app/modelo/dto/paciente/PqrsPacienteDto';
+import PqrsPacienteDto from 'src/app/modelo/dto/paciente/pqrsPacienteDto';
 import { PqrsService } from 'src/app/servicios/pqrs.service';
 
 
