@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CrearPQRSDTO } from '../modelo/dto/paciente/crearPqrsDto';
-import PqrsPacienteDto  from '../modelo/dto/paciente/PqrsPacienteDto';
+import PqrsPacienteDto  from '../modelo/dto/paciente/pqrsPacienteDto';
 
 
 @Injectable({
