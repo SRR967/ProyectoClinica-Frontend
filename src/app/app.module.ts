@@ -13,7 +13,6 @@ import { CrearPQRSComponent } from './pagina/paciente/crear-pqrs/crear-pqrs.comp
 import { ImagenesComponent } from './pagina/imagenes/imagenes.component';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

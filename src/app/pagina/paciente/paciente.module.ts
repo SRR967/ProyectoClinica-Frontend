@@ -13,6 +13,8 @@ import { PacienteInicioComponent } from './paciente-inicio/paciente-inicio.compo
 import { PacienteInicioBodyComponent } from './paciente-inicio-body/paciente-inicio-body.component';
 import { RouterModule, Routes } from '@angular/router';
 import { DetallePqrsComponent } from './detalle-pqrs/detalle-pqrs.component';
+import { CrearCitaComponent } from './crear-cita/crear-cita.component';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -31,10 +33,12 @@ const routes: Routes = [
     ResponderPQRSComponent,
     PacienteInicioBodyComponent,
     PacienteInicioComponent,
-    DetallePqrsComponent
+    DetallePqrsComponent,
+    CrearCitaComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
     RouterModule.forChild(routes)
   ],
   exports: [ RouterModule ]

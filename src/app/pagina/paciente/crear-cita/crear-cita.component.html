@@ -1,0 +1,57 @@
+<div>
+    <div class="head-window">
+        <div class="title-window">
+          Solicita Tu Cita
+        </div>
+        <div class="user-image">
+          <img src="../../../../assets/images/imagen3.jpg" alt="">
+        </div>
+    </div>
+    <form #f="ngForm">
+
+        <div class="container">
+            <div class="container text-center">
+                <div class="row align-items-start">
+                <div class="col">
+                    <div class="form-floating mb-3" >
+                        <select name="eps" required [(ngModel)]="crearCitaDto.especialidad" class="form-control" placeholder="" >
+                            <option value="" selected> Seleccione la Especialidad</option>
+                            <option value="" selected> Nutrcionista</option>
+                            <option value="" selected> Psicologia</option>
+                            <!-- <option [value]="item" *ngFor="let item of eps; index as i" >{{item}} </option> -->
+                        </select>
+                        <label for="floatingInput" >Especialidad </label>
+                    </div>
+                
+                    <div class="form-floating mb-3" >
+                        <input type="date" name="fechaNacimiento" class="form-control" placeholder=""
+                        required="true" [(ngModel)]="crearCitaDto.fecha" />
+                        <label for="floatingInput" >Fecha de la Cita</label>
+                    </div>
+                    
+                </div>
+                
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="text" name="confirmarCorreo" class="form-control" placeholder=""
+                        required="true" [(ngModel)]="crearCitaDto.motivo"  />
+                        <label for="floatingInput">Motivo</label>
+                    </div>
+            
+                    <div class="form-floating mb-3" >
+                        <input type="time" name="horaCita" class="form-control" placeholder=""
+                        required="true" [(ngModel)]="crearCitaDto.hora" />
+                        <label for="floatingInput" >Hora de la Cita</label>
+                    </div>
+                </div>
+            </div>     
+            </div>
+        
+            <div  class="container text-center">
+                <button class="btn-customize-pr" type="submit" (click)="crearCita()" >Crear Cita</button>
+            </div>
+        </div>
+        
+    </form>
+    
+</div>
