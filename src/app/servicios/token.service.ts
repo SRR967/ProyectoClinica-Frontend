@@ -37,6 +37,15 @@ export class TokenService {
     this.router.navigate(["/login"]);
   }
 
+  public getCodigo(): string{
+    const token= this.getToken();
+    if(token){
+      const values = this.decodePayload(token);
+      return values.codigo;
+    }
+    return "";
+  }
+
   private decodePayload(token: string): any {
     const payload = token!.split(".")[1];
     const payloadDecoded = Buffer.from(payload, 'base64').toString('ascii');
