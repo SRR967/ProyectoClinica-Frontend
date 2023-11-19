@@ -23,7 +23,6 @@ const routes: Routes = [
   declarations: [
     DetalleComponent,
     EditarPerfilComponent,
-    CrearPQRSComponent,
     DetalleCitaComponent,
     ListarPQRSComponent,
     ListarCitasComponent,
