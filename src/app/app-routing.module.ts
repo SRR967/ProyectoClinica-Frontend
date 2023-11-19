@@ -7,12 +7,13 @@ import { RecuperarContrasenaComponent } from './pagina/recuperar-contrasena/recu
 import { PacienteInicioComponent } from './pagina/paciente/paciente-inicio/paciente-inicio.component';
 import { CrearPQRSComponent } from './pagina/paciente/crear-pqrs/crear-pqrs.component';
 import { DetallePqrsComponent } from './pagina/paciente/detalle-pqrs/detalle-pqrs.component';
+import { LoginGuard } from './guards/permiso.service';
 
 const routes: Routes = [
   {path: '', redirectTo:'/inicio', pathMatch: 'full'},
   {path: 'inicio', component: InicioComponent},
-  {path: "login", component: LoginComponent},
-  {path: "registro", component: RegistroComponent},
+  {path: "login", component: LoginComponent, canActivate:[LoginGuard]},
+  {path: "registro", component: RegistroComponent, canActivate:[LoginGuard]},
   {path: "recuperarContrasena", component: RecuperarContrasenaComponent},
   {path: "pacienteInicio", loadChildren: () => import( './pagina/paciente/paciente.module' ).then( (m) => m.PacienteModule)  },
   {path: "crearPqrs", component: CrearPQRSComponent},

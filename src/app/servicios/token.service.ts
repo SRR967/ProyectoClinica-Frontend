@@ -46,6 +46,15 @@ export class TokenService {
     return "";
   }
 
+  public getEmail(): string{
+    const token= this.getToken();
+    if(token){
+      const values = this.decodePayload(token);
+      return values.sub;
+    } 
+    return "";
+  }
+
   private decodePayload(token: string): any {
     const payload = token!.split(".")[1];
     const payloadDecoded = Buffer.from(payload, 'base64').toString('ascii');
