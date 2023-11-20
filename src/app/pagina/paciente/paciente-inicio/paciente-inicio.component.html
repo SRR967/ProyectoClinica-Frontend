@@ -3,7 +3,7 @@
       <div class="col-2">
         <div class="body-function">
             <button (click)="mostrarComponenteCrearCita()" class="btn-menu" type="menu">Solicitar Una Cita</button>
-            <button class="btn-menu" type="menu">Ver Historial De Consultas</button>
+            <button (click)="mostrarComponenteListaConsulta()"  class="btn-menu" type="menu">Ver Historial De Consultas</button>
             <button (click)="mostrarComponenteListaPqrs()" class="btn-menu" type="menu">Gestion PQRS</button>
 
             <div class="abajo" >
@@ -27,6 +27,10 @@
 
         <div>
           <app-crear-cita *ngIf="mostrarCrearCita"></app-crear-cita>
+        </div>
+
+        <div>
+          <app-listar-consultas *ngIf="mostrarListaConsulta" ></app-listar-consultas>
         </div>
         
         <!-- <div class="head-window">

@@ -10,6 +10,7 @@ export class PacienteInicioComponent {
   mostrarInicioPacienteBody: boolean = true;
   mostrarListaPQRS: boolean=false;
   mostrarCrearCita: boolean=false;
+  mostrarListaConsulta: boolean=false;
 
   // Método para mostrar inicioPacienteBody cuando sea necesario
   mostrarComponenteBody() {
@@ -24,6 +25,11 @@ export class PacienteInicioComponent {
   mostrarComponenteCrearCita() {
     this.settearFalse();
     this.mostrarCrearCita = true;
+  }
+
+  mostrarComponenteListaConsulta(){
+    this.settearFalse();
+    this.mostrarListaConsulta= true;
   }
 
   settearFalse(){
