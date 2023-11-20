@@ -14,27 +14,27 @@
                 <div class="row align-items-start">
                 <div class="col">
                     <div class="form-floating mb-3" >
-                        <select name="eps" required [(ngModel)]="registroCitaDto .especialidad" [(ngModel)]="seleccion" 
+                        <select name="eps"  id="eps" required [(ngModel)]="registroCitaDto.especialidad" [(ngModel)]="seleccion" 
                         (change)="onSeleccionCambio()" class="form-control" placeholder="" >
                             <option value="" selected> Seleccione la Especialidad</option>
                             <option [value]="item" *ngFor="let item of especialidad; index as i" >{{item}}</option>
                         </select>
-                        <label for="floatingInput" >Especialidad </label>
+                        <label for="eps" >Especialidad </label>
                     </div>
                 
                     <div class="form-floating mb-3" >
-                        <input type="datetime-local" name="fechaCita" class="form-control" placeholder="" 
+                        <input type="datetime-local" name="fechaCita" id="fechaCita" class="form-control" placeholder="" 
                         required="true" [(ngModel)]="registroCitaDto.fechaCita" />
-                        <label for="floatingInput" >Fecha de la Cita</label>
+                        <label for="fechaCita" >Fecha de la Cita</label>
                     </div>
                     
                 </div>
                 
                 <div class="col">
                     <div class="form-floating mb-3">
-                        <input type="text" name="Motivo" class="form-control" placeholder=""
+                        <input type="text" name="Motivo" id="Motivo" class="form-control" placeholder=""
                         required="true"  [(ngModel)]="registroCitaDto.motivo"  />
-                        <label for="floatingInput">Motivo</label>
+                        <label for="Motivo">Motivo</label>
                     </div>
             
                     
@@ -51,7 +51,7 @@
                                 </thead>
                                 <tbody class="table-group-divider">
                                     <tr *ngFor="let m of medico"> 
-                                        <td><input class="form-check-input" type="checkbox" (change)="seleccionar(m.cedula)" /></td>
+                                        <td><input name="medico" class="form-check-input" type="checkbox" (change)="seleccionar(m.cedula)" /></td>
                                         <td><p>{{m.cedula}}</p></td>
                                         <td><p>{{m.nombre}}</p></td>
                                     </tr>

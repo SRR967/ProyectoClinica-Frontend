@@ -42,8 +42,8 @@ export class CrearCitaComponent {
 
   public crearCita(){
     let codigoPaciente = this.tokenService.getCodigo();
-    let token = this.tokenService.getToken();
     console.log(codigoPaciente);
+    let token = this.tokenService.getToken();
     console.log(token);
     this.registroCitaDto.ccPaciente = codigoPaciente;
     this.pacienteService.crearCita(this.registroCitaDto).subscribe({

@@ -17,7 +17,7 @@ export class UsuarioInterceptor implements HttpInterceptor {
 
   constructor(private tokenService: TokenService, private authService: AuthService) { }
 
-  intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     if (!this.tokenService.isLogged()) {
       return next.handle(req);
