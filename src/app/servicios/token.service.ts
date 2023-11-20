@@ -31,9 +31,18 @@ export class TokenService {
 
   public login(token:string){
     this.setToken(token);
-    this.router.navigate(["/"]).then(()=> {
+    const roles:string[] = this.getRole();
+    let rolPaciente:string = "paciente"
+    if(roles.includes(rolPaciente)){
+      this.router.navigate(["/pacienteInicio"]).then(()=> {
       window.location.reload();
     });
+    }else{
+      this.router.navigate(["/pacienteInicio"]).then(()=> {
+      window.location.reload();
+    });
+    }
+    
   }
 
   public logout() {
