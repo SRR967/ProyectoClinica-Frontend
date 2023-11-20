@@ -26,4 +26,7 @@ export class CitasService {
     this.cita.push({codigo: codigo, estadoCita: 'Creada', especialidad: cita.especialidad,
     fecha: new Date().toISOString()});
   }
+
+
+
 }
