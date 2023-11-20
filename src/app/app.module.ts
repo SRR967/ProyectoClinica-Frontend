@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +12,7 @@ import { RecuperarContrasenaComponent } from './pagina/recuperar-contrasena/recu
 import { CrearPQRSComponent } from './pagina/paciente/crear-pqrs/crear-pqrs.component';
 import { ImagenesComponent } from './pagina/imagenes/imagenes.component';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
+import { UsuarioInterceptor } from './interceptor/usuario.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { AlertaComponent } from './pagina/alerta/alerta.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: UsuarioInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 

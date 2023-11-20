@@ -21,7 +21,9 @@ const routes: Routes = [
   {path: "crearPqrs", component: CrearPQRSComponent, canActivate: [RolesGuard], data: {
     expectedRole: ["paciente"]
   }},
-  {path: "detallePqrs/:codigo", component: DetallePqrsComponent, }
+  {path: "detallePqrs/:codigo", component: DetallePqrsComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["paciente"]
+  } }
 ];
 
 @NgModule({

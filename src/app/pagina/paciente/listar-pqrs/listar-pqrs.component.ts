@@ -14,7 +14,7 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class ListarPQRSComponent {
 
   pqrs: PqrsPacienteDto[];
-  alerta!:Alerta
+  alertaPaciente!:Alerta
 
   constructor(private pacienteService: PacienteService, private tokenService: TokenService){
     this.pqrs = [];
@@ -28,7 +28,7 @@ export class ListarPQRSComponent {
         this.pqrs = data.respuesta;
       },
       error: error => {
-        this.alerta= {mensaje: error.error.respuesta, tipo: "danger"};
+        this.alertaPaciente= {mensaje: error.error.respuesta, tipo: "danger"};
       }
     });
   }

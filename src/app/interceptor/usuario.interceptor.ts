@@ -3,33 +3,34 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor
+  HttpInterceptor,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { TokenService } from '../servicios/token.service';
 import { AuthService } from '../servicios/auth.service';
 
-const AUTHORIZATION= "Authorization";
-const BEARER = "Bearer";
+const AUTHORIZATION = "Authorization";
+const BEARER = "Bearer ";
+
 @Injectable()
 export class UsuarioInterceptor implements HttpInterceptor {
 
-  constructor(private tokenService: TokenService, private authService: AuthService) {}
+  constructor(private tokenService: TokenService, private authService: AuthService) { }
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const isApiUrl = request.url.includes("api/auth");
-    const urlClinica = request.url.includes("api/clinica");
-    if( !this.tokenService.isLogged() || isApiUrl || urlClinica ){
-      return next.handle(request);
+  intercept(req: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+
+    if (!this.tokenService.isLogged()) {
+      return next.handle(req);
     }
-    let initReq= request;
+    let initReq = req;
     let token = this.tokenService.getToken();
-    initReq = this.addToken(request, token!);
-    
+    initReq = this.addToken(req, token!);
+
     return next.handle(initReq);
   }
 
-  private addToken(req: HttpRequest<any>, token:string): HttpRequest<any> {
-    return req.clone({headers: req.headers.set(AUTHORIZATION,BEARER + token)});
+  private addToken(req: HttpRequest<any>, token: string): HttpRequest<any> {
+    return req.clone({ headers: req.headers.set(AUTHORIZATION, BEARER + token) });
   }
+
 }

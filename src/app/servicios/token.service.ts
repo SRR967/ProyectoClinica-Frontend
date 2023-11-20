@@ -9,7 +9,9 @@ const TOKEN_KEY = "AuthToken";
 })
 export class TokenService {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    console.log("Token inicializado");
+  }
 
   public setToken(token: string) {
     window.sessionStorage.removeItem(TOKEN_KEY);

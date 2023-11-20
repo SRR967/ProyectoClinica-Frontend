@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ImagenService } from 'src/app/servicios/imagen.service';
 
 @Component({
   selector: 'app-paciente-inicio-body',
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
 })
 
 export class PacienteInicioBodyComponent {
+
+  constructor(private imagenService: ImagenService){}
+
+  
 
 }

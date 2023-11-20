@@ -15,6 +15,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { DetallePqrsComponent } from './detalle-pqrs/detalle-pqrs.component';
 import { CrearCitaComponent } from './crear-cita/crear-cita.component';
 import { FormsModule } from '@angular/forms';
+import { AlertaPacienteComponent } from './alerta-paciente/alerta-paciente.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UsuarioInterceptor } from 'src/app/interceptor/usuario.interceptor';
 
 
 const routes: Routes = [
@@ -34,12 +37,16 @@ const routes: Routes = [
     PacienteInicioBodyComponent,
     PacienteInicioComponent,
     DetallePqrsComponent,
-    CrearCitaComponent
+    CrearCitaComponent,
+    AlertaPacienteComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     RouterModule.forChild(routes)
+  ],
+  providers:[
+    {provide: HTTP_INTERCEPTORS, useClass: UsuarioInterceptor, multi: true}
   ],
   exports: [ RouterModule ]
 })

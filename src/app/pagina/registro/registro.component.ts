@@ -59,7 +59,7 @@ export class RegistroComponent {
         this.ciudad = data.respuesta;
       },
       error: error =>{
-        console.log(error)
+        this.alerta = {mensaje: error.error.respuesta, tipo: "danger"};
       }
     });
   }

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { MensajeDTO } from '../modelo/dto/MensajeDTO';
 import { ActualizarPacienteDTO } from '../modelo/dto/paciente/ActualizarPacienteDto';
 import { CrearPQRSDTO } from '../modelo/dto/paciente/crearPqrsDto';
+import { RegistroCitaDTO } from '../modelo/dto/paciente/RegistroCitaDTO';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,9 @@ export class PacienteService {
   
   public listarPQRSPaciente(codigoPaciente: string): Observable<MensajeDTO> {
     return this.http.get<MensajeDTO>(`${this.userUrl}/listar-PQRS/${codigoPaciente}`);
+  }
+
+  public crearCita(cita:RegistroCitaDTO): Observable<MensajeDTO>{
+    return this.http.post<MensajeDTO>(`${this.userUrl}/agendar-cita`, cita);
   }
 }
