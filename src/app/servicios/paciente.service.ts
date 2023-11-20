@@ -49,8 +49,16 @@ export class PacienteService {
     return this.http.get<MensajeDTO>(`${this.userUrl}/listar-PQRS/${codigoPaciente}`);
   }
 
+  public listarPQRSPacientePrevia(codigoPaciente: string): Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.userUrl}/listar-PQRS-previas/${codigoPaciente}`);
+  }
+
   public listarCitas(codigoPaciente:string): Observable<MensajeDTO>{
     return this.http.get<MensajeDTO>(`${this.userUrl}/listar-citas/${codigoPaciente}`);
+  }
+
+  public listarCitasPrevias(codigoPaciente:string): Observable<MensajeDTO>{
+    return this.http.get<MensajeDTO>(`${this.userUrl}/listar-citas-previas/${codigoPaciente}`);
   }
 
   public listarConsultas(codigoPaciente:string): Observable<MensajeDTO>{
