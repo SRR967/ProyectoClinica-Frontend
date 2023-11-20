@@ -11,6 +11,7 @@ import { LoginGuard } from './guards/permiso.service';
 import { RolesGuard } from './guards/roles.service';
 import { ListarPQRSComponent } from './pagina/paciente/listar-pqrs/listar-pqrs.component';
 import { ListarCitasComponent } from './pagina/paciente/listar-citas/listar-citas.component';
+import { DetalleCitaComponent } from './pagina/paciente/detalle-cita/detalle-cita.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'/inicio', pathMatch: 'full'},
@@ -33,7 +34,12 @@ const routes: Routes = [
   } },
   {path: "listarCitas", component: ListarCitasComponent, canActivate: [RolesGuard], data: {
     expectedRole: ["paciente"]
+  } },
+
+  {path: "detalleCita/:codigo", component: DetalleCitaComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["paciente"]
   } }
+
 ];
 
 @NgModule({

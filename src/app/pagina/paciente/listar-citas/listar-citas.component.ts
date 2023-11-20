@@ -16,10 +16,20 @@ export class ListarCitasComponent {
 
   constructor(private pacienteService: PacienteService, private tokenService: TokenService){
     this.citas = [];
+    this.obtenerCitas();
   }
 
   public obtenerCitas(){
     let codigo = this.tokenService.getCodigo();
+
+    this.pacienteService.listarCitas(codigo).subscribe({
+      next: data=>{
+        this.citas= data.respuesta;
+      },
+      error: error => {
+        this.alertaPaciente= {mensaje: error.error.respuesta, tipo: "danger"};
+      }
+    });
     
   }
 
