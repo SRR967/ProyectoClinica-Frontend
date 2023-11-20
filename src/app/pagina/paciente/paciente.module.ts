@@ -38,6 +38,7 @@ const routes: Routes = [
     PacienteInicioBodyComponent,
     PacienteInicioComponent,
     DetallePqrsComponent,
+    CrearPQRSComponent,
     CrearCitaComponent,
     AlertaPacienteComponent,
     ImagenesComponent

@@ -19,13 +19,14 @@ export class UsuarioInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    if (!this.tokenService.isLogged()) {
+    const isApiUrl = req.url.includes("api/auth");
+    const urlClinica = req.url.includes("api/clinica");
+    if ( !this.tokenService.isLogged() || isApiUrl || urlClinica ) {
       return next.handle(req);
     }
     let initReq = req;
     let token = this.tokenService.getToken();
     initReq = this.addToken(req, token!);
-
     return next.handle(initReq);
   }
 

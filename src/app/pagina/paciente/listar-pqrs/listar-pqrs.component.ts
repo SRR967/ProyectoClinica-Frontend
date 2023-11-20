@@ -18,6 +18,7 @@ export class ListarPQRSComponent {
 
   constructor(private pacienteService: PacienteService, private tokenService: TokenService){
     this.pqrs = [];
+    this.obtenerPQRS();
   }
 
   public obtenerPQRS(){
@@ -31,6 +32,10 @@ export class ListarPQRSComponent {
         this.alertaPaciente= {mensaje: error.error.respuesta, tipo: "danger"};
       }
     });
+  }
+
+  public detallePQRS(){
+
   }
 
 }

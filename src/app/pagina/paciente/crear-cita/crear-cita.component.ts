@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Alerta } from 'src/app/modelo/alerta';
+import { ItemListasDto } from 'src/app/modelo/dto/ItemListasDto';
 import { ItemMedicoDto } from 'src/app/modelo/dto/item-medico-dto';
 import { RegistroCitaDTO } from 'src/app/modelo/dto/paciente/RegistroCitaDTO';
 import { ClinicaService } from 'src/app/servicios/clinica.service';
@@ -15,7 +16,7 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class CrearCitaComponent {
 
   registroCitaDto: RegistroCitaDTO;
-  especialidad: string[];
+  especialidad: ItemListasDto[];
   alertaPaciente!:Alerta
   medico: ItemMedicoDto[]=[];
   seleccion: string;

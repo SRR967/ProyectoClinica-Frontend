@@ -17,7 +17,7 @@
                         <select name="eps"  id="eps" required [(ngModel)]="registroCitaDto.especialidad" [(ngModel)]="seleccion" 
                         (change)="onSeleccionCambio()" class="form-control" placeholder="" >
                             <option value="" selected> Seleccione la Especialidad</option>
-                            <option [value]="item" *ngFor="let item of especialidad; index as i" >{{item}}</option>
+                            <option [value]="item" *ngFor="let item of especialidad; index as i" >{{item.nombre}}</option>
                         </select>
                         <label for="eps" >Especialidad </label>
                     </div>

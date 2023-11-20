@@ -58,7 +58,7 @@
                     <select name="ciudad" required class="form-control" placeholder=""
                     [(ngModel)]="crearPacienteDto.ciudad">
                         <option value="" selected>Selecione una ciudad</option>
-                        <option [value]="item" *ngFor="let item of ciudad; index as i">{{item}}</option>
+                        <option [value]="item" *ngFor="let item of ciudad; index as i">{{item.nombre}}</option>
                     </select>
                     <label for="floatingInput" >Ciudad </label>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="form-floating mb-3" >
                     <select name="eps" required [(ngModel)]="crearPacienteDto.eps" class="form-control" placeholder="" >
                         <option value="" selected> Seleccione una EPS</option>
-                        <option [value]="item" *ngFor="let item of eps; index as i" >{{item}} </option>
+                        <option [value]="item" *ngFor="let item of eps; index as i" >{{item.nombre}} </option>
                     </select>
                     <label for="floatingInput" >EPS </label>
                 </div>
@@ -74,7 +74,7 @@
                 <div class="form-floating mb-3">
                     <select name="tipoSangre" required [(ngModel)]="crearPacienteDto.tipoSangre" class="form-control" placeholder="" >
                         <option value="" selected>Seleccione un tipo de sangre</option>
-                        <option [value]="item" *ngFor="let item of tipoSangre; index as i" >{{item}} </option>
+                        <option [value]="item" *ngFor="let item of tipoSangre; index as i" >{{item.nombre}} </option>
                     </select>
                     <label for="floatingInput" >Tipo de sangre </label>
                 </div>

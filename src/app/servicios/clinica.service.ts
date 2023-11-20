@@ -32,4 +32,8 @@ export class ClinicaService {
     return this.http.get<MensajeDTO>(`${this.clinicaURL}/listar-medicos/${especialidad}`);
   }
 
+  public listarTipoPQRS(): Observable<MensajeDTO>{
+    return this.http.get<MensajeDTO>(`${this.clinicaURL}/listar-tipoPQRS`);
+  }
+
 }

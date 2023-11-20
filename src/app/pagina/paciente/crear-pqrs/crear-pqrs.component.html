@@ -7,18 +7,16 @@
             <div class="mb-3 row">
                 <label class="col-sm-1 col-form-label">Tipo: </label>
                 <div class="col-sm-5">
-                    <select name="tipo" required class="form-select" [(ngModel)]="crearPqrsDto.tipoPQRS">
+                    <select name="tipoPqrs" required class="form-select" [(ngModel)]="crearPqrsDto.tipoPQRS">
 
                         <option value="" selected>Seleccione un tipo</option>
-                        <option value="Queja">Queja</option>
-                        <option value="Reclamo">Reclamo</option>
-                        <option value="Sugerencia">Sugerencia</option>
-                        <option value="Petición">Petición</option>
+                        <option [value]="item" *ngFor="let item of tipoPqrs; index as i" >{{item.nombre}}</option>
+
                     </select>
                 </div>
                 <label class="col-sm-1 col-form-label">Asunto: </label>
                 <div class="col-sm-5">
-                    <input type="text" class="form-control" placeholder="Ej. Mejoramiento Sala De Espera" [(ngModel)]="crearPqrsDto.asunto">
+                    <input type="text" name="asunto" class="form-control" placeholder="Ej. Mejoramiento Sala De Espera" [(ngModel)]="crearPqrsDto.asunto">
                 </div>
             </div>
             <div class="mb-3 row">
@@ -30,40 +28,18 @@
                                 <th></th>
                                 <th>Código</th>
                                 <th>Especialidad</th>
-                                <th>Fecha cita</th>
-                                <th>Médico</th>
+                                <th>Fecha Consulta</th>
+                                <th>fecha Solicitud</th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
-                            <tr>
-                                <td><input class="form-check-input" type="checkbox" (change)="seleccionar(1)" /></td>
-                                <td>
-                                    <p>1</p>
-                                </td>
-                                <td>
-                                    <p>OFTALMOLOGÍA</p>
-                                </td>
-                                <td>
-                                    <p>2023-10-20</p>
-                                </td>
-                                <td>
-                                    <p>Pedrito</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="form-check-input" type="checkbox" (change)="seleccionar(2)" /></td>
-                                <td>
-                                    <p>2</p>
-                                </td>
-                                <td>
-                                    <p>GENERAL</p>
-                                </td>
-                                <td>
-                                    <p>2023-10-10</p>
-                                </td>
-                                <td>
-                                    <p>Juanito</p>
-                                </td>
+                            <tr *ngFor="let consulta of consultaPacienteDto">
+                                <td><input name="consulta" class="form-check-input" type="checkbox" (change)="seleccionar(consulta.idConsulta)" /></td>
+                                <td><p>{{consulta.idConsulta}}</p></td>
+                                <td><p>{{consulta.especialidad}}</p></td>
+                                <td><p>{{consulta.fechaConsulta}}</p></td>
+                                <td><p>{{consulta.fechaSolicitud}}</p></td>
+                                
                             </tr>
                         </tbody>
                     </table>
@@ -80,6 +56,8 @@
             <button class="btn btn-primary" type="submit" [disabled]="f.invalid">
                 <i class="fa-solid fa-circle-plus me-1"></i>Crear PQRS
             </button>
+            <app-alerta-paciente [alertaPaciente]="alertaPaciente"></app-alerta-paciente>
+
         </form>
     </div>
 </div>

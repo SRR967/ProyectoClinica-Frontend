@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ImagenService } from 'src/app/servicios/imagen.service';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-paciente-inicio-body',
@@ -9,7 +10,15 @@ import { ImagenService } from 'src/app/servicios/imagen.service';
 
 export class PacienteInicioBodyComponent {
 
-  constructor(private imagenService: ImagenService){}
+  nombre: string ="";
+
+  constructor(private imagenService: ImagenService, private tokenService: TokenService){
+    this.cargarNombre();
+  }
+
+  public cargarNombre(){
+    this.nombre = this.tokenService.getNombre();
+  }
 
   
 
