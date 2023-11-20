@@ -37,6 +37,7 @@ export class PacienteInicioComponent {
     this.mostrarInicioPacienteBody = false;
     this.mostrarListaPQRS = false;
     this.mostrarCrearCita = false;
+    this.mostrarListaConsulta = false;
     
   }
 }

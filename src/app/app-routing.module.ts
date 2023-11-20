@@ -9,6 +9,8 @@ import { CrearPQRSComponent } from './pagina/paciente/crear-pqrs/crear-pqrs.comp
 import { DetallePqrsComponent } from './pagina/paciente/detalle-pqrs/detalle-pqrs.component';
 import { LoginGuard } from './guards/permiso.service';
 import { RolesGuard } from './guards/roles.service';
+import { ListarPQRSComponent } from './pagina/paciente/listar-pqrs/listar-pqrs.component';
+import { ListarCitasComponent } from './pagina/paciente/listar-citas/listar-citas.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'/inicio', pathMatch: 'full'},
@@ -22,6 +24,12 @@ const routes: Routes = [
     expectedRole: ["paciente"]
   }},
   {path: "detallePqrs/:codigo", component: DetallePqrsComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["paciente"]
+  } },
+  {path: "listarPqrs", component: ListarPQRSComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["paciente"]
+  } },
+  {path: "listarCitas", component: ListarCitasComponent, canActivate: [RolesGuard], data: {
     expectedRole: ["paciente"]
   } }
 ];
