@@ -18,6 +18,12 @@ export class DetallePqrsComponent {
   alertaPaciente!:Alerta
 
   constructor(private route:ActivatedRoute, private pacienteService: PacienteService){
+    this.pqrs = new DetallePQRSdto;
+    this.obtenerDetallePqrs();
+
+  }
+
+  obtenerDetallePqrs(){
     this.route.params.subscribe(params => {
       this.codigoPqrs= params['codigo'];
 
@@ -30,7 +36,6 @@ export class DetallePqrsComponent {
         }
       })
     });
-
   }
 
 }

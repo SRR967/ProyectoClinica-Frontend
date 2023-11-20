@@ -12,6 +12,8 @@ import { RolesGuard } from './guards/roles.service';
 import { ListarPQRSComponent } from './pagina/paciente/listar-pqrs/listar-pqrs.component';
 import { ListarCitasComponent } from './pagina/paciente/listar-citas/listar-citas.component';
 import { DetalleCitaComponent } from './pagina/paciente/detalle-cita/detalle-cita.component';
+import { DetalleConsultaComponent } from './pagina/paciente/detalle-consulta/detalle-consulta.component';
+import { ListarConsultasComponent } from './pagina/paciente/listar-consultas/listar-consultas.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'/inicio', pathMatch: 'full'},
@@ -37,6 +39,14 @@ const routes: Routes = [
   } },
 
   {path: "detalleCita/:codigo", component: DetalleCitaComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["paciente"]
+  } },
+
+  {path: "listarConsultas", component: ListarConsultasComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["paciente"]
+  } },
+
+  {path: "detalleConsulta/:codigo", component: DetalleConsultaComponent, canActivate: [RolesGuard], data: {
     expectedRole: ["paciente"]
   } }
 
