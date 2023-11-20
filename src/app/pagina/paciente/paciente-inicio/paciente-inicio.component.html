@@ -8,7 +8,7 @@
 
             <div class="abajo" >
                 <button class="btn-function" type="menu">Cerrar Sesión</button>
-                <button class="btn-function" type="menu">Actualizar Datos</button>
+                <button (click)="mostrarComponenteActualizarPaciente()" class="btn-function" type="menu">Actualizar Datos</button>
                 <button class="btn-function" type="menu">Darme de Baja</button>
                 <div  ></div>
             </div>
@@ -31,6 +31,10 @@
 
         <div>
           <app-listar-consultas *ngIf="mostrarListaConsulta" ></app-listar-consultas>
+        </div>
+
+        <div>
+          <app-editar-perfil *ngIf="mostrarActualizarPaciente" ></app-editar-perfil>
         </div>
         
         <!-- <div class="head-window">
