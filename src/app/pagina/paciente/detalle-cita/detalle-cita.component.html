@@ -1,1 +1,11 @@
-<p>detalle-cita works!</p>
+<div *ngIf="detalleCita">
+    <h2>Detalles de la cita</h2>
+    <p>Código: {{ detalleCita.idCita }}</p>
+    <p>Fecha consulta: {{ detalleCita.fechaCita }}</p>
+    <p>Nombre Medico: {{detalleCita.nombreMedico}}</p>
+    <p>Especialidad: {{detalleCita.especialidad}}</p>
+    <p>Fecha Solicitud: {{detalleCita.fechaSolicitud}}</p>
+    <p>Motivo: {{detalleCita.motivo}}</p>
+    <!-- Agrega más campos según tu estructura de DetalleCitaDTO -->
+  </div>
+  
