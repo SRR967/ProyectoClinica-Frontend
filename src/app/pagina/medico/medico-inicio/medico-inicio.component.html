@@ -1,0 +1,29 @@
+<div class="container ">
+    <div class="row align-items-start">
+      <div class="col-2">
+        <div class="body-function">
+            <button  class="btn-menu" type="menu">Inicio</button>
+            <button  class="btn-menu" type="menu">Agenda</button>
+            <button  class="btn-menu" type="menu">Historial</button>
+            <button class="btn-menu" type="menu">Disponibilidad</button>
+
+            <div class="abajo" >
+                <button class="btn-function" type="menu">Cerrar Sesión</button>
+                <button class="btn-function" type="menu">Actualizar Datos</button>
+                <button class="btn-function" type="menu">Darme de Baja</button>
+                <div  ></div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="col-10">
+
+        <div>
+            <app-medico-inicio-body *ngIf="mostrarComponenteBody" ></app-medico-inicio-body>
+        </div>
+
+
+      </div>
+    </div>
+</div>
+

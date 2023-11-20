@@ -20,6 +20,8 @@ const routes: Routes = [
   {path: "recuperarContrasena", component: RecuperarContrasenaComponent},
   {path: "pacienteInicio", loadChildren: () => import( './pagina/paciente/paciente.module' ).then( (m) => m.PacienteModule),
     canActivateChild: [RolesGuard], data:{expectedRole:["paciente"]}},
+  {path: "medicoInicio", loadChildren:()=> import('./pagina/medico/medico.module').then( (m) => m.MedicoModule),
+    canActivateChild: [RolesGuard], data:{expectedRole:["medico"]}},
   {path: "crearPqrs", component: CrearPQRSComponent, canActivate: [RolesGuard], data: {
     expectedRole: ["paciente"]
   }},

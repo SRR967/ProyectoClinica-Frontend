@@ -38,7 +38,7 @@ export class TokenService {
       window.location.reload();
     });
     }else{
-      this.router.navigate(["/pacienteInicio"]).then(()=> {
+      this.router.navigate(["/medicoInicio"]).then(()=> {
       window.location.reload();
     });
     }

@@ -7,8 +7,17 @@ import { RadicarConsultaComponent } from './radicar-consulta/radicar-consulta.co
 import { CitasAtendidasComponent } from './citas-atendidas/citas-atendidas.component';
 import { RegistrarDiaLibreComponent } from './registrar-dia-libre/registrar-dia-libre.component';
 import { VerDiasLibresComponent } from './ver-dias-libres/ver-dias-libres.component';
+import { MedicoInicioBodyComponent } from './medico-inicio-body/medico-inicio-body.component';
+import { MedicoInicioComponent } from './medico-inicio/medico-inicio.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { UsuarioInterceptor } from 'src/app/interceptor/usuario.interceptor';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
+const routes: Routes= [
+  {path: '', component: MedicoInicioComponent},
+];
 
 @NgModule({
   declarations: [
@@ -18,10 +27,18 @@ import { VerDiasLibresComponent } from './ver-dias-libres/ver-dias-libres.compon
     RadicarConsultaComponent,
     CitasAtendidasComponent,
     RegistrarDiaLibreComponent,
-    VerDiasLibresComponent
+    VerDiasLibresComponent,
+    MedicoInicioBodyComponent,
+    MedicoInicioComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    FormsModule,
+    RouterModule.forChild(routes)
+  ],
+  providers:[
+    {provide: HTTP_INTERCEPTORS, useClass: UsuarioInterceptor, multi: true}
+  ],
+  exports: [RouterModule]
 })
 export class MedicoModule { }
