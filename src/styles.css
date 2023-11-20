@@ -57,6 +57,7 @@ footer{
     border: none;
     cursor: pointer;
     transition: 0.5s;
+    margin-top: 10px;
 }
 
 .btn-customize-pr:disabled{

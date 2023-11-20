@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,8 @@ import { RegistroComponent } from './pagina/registro/registro.component';
 import { RecuperarContrasenaComponent } from './pagina/recuperar-contrasena/recuperar-contrasena.component';
 import { CrearPQRSComponent } from './pagina/paciente/crear-pqrs/crear-pqrs.component';
 import { ImagenesComponent } from './pagina/imagenes/imagenes.component';
-
+import { AlertaComponent } from './pagina/alerta/alerta.component';
+import { UsuarioInterceptor } from './interceptor/usuario.interceptor';
 
 @NgModule({
   declarations: [
@@ -19,16 +21,18 @@ import { ImagenesComponent } from './pagina/imagenes/imagenes.component';
     LoginComponent,
     RegistroComponent,
     RecuperarContrasenaComponent,
-    CrearPQRSComponent,
-    ImagenesComponent
+    AlertaComponent
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: UsuarioInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 

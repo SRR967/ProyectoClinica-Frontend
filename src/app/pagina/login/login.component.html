@@ -1,4 +1,4 @@
-<form #f="ngForm" (ngSubmit)="ingresar()">
+<form #f="ngForm">
 
     <div class="body-login" >
         <div class="container align-items-center">
@@ -23,14 +23,15 @@
                                 required="true" [(ngModel)]="loginDto.contrasena">
                                 <label for="floatingInput" >Contraseña</label>
                             </div>
-                            <button class="btn-customize-pr text-btn" type="submit" [disabled]="f.invalid" >Entrar</button>
+                            <button class="btn-customize-pr text-btn" 
+                            (click)="login()" type="submit" [disabled]="f.invalid">Entrar</button>
                             <div class=" link-recover">
                                 <a routerLink="/recuperarContrasena">¡Olvide mi contraseña!</a>
                             </div>
 
                             <hr>
 
-                            <button class="btn-outliner" type="submit" routerLink="/registro" >Registrarme</button>
+                            <button class="btn-outliner" type="submit" routerLink="/registro">Registrarme</button>
 
                         </div>
                     </div>         

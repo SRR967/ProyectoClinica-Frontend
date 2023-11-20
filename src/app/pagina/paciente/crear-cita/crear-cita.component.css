@@ -15,7 +15,12 @@
     display: inline-block;
 }
 
-.image-space{
+.user-image{
     width: 8%;
     display: inline-block;
 }
+
+.user-image img{
+    width: 100%;
+    border-radius: 50%;
+} 

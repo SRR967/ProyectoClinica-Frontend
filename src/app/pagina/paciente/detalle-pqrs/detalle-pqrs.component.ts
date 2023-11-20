@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Alerta } from 'src/app/modelo/alerta';
 import { DetallePQRSdto } from 'src/app/modelo/dto/paciente/DetallePQRSdto';
-import PqrsPacienteDto from 'src/app/modelo/dto/paciente/PqrsPacienteDto';
+import PqrsPacienteDto from 'src/app/modelo/dto/paciente/pqrsPacienteDto';
+import { PacienteService } from 'src/app/servicios/paciente.service';
 import { PqrsService } from 'src/app/servicios/pqrs.service';
 
 
@@ -12,16 +14,21 @@ import { PqrsService } from 'src/app/servicios/pqrs.service';
 })
 export class DetallePqrsComponent {
   codigoPqrs: string = "";
-  pqrs: PqrsPacienteDto | undefined;
+  pqrs: DetallePQRSdto | undefined;
+  alertaPaciente!:Alerta
 
-  constructor(private route:ActivatedRoute, private pqrsService: PqrsService){
+  constructor(private route:ActivatedRoute, private pacienteService: PacienteService){
     this.route.params.subscribe(params => {
       this.codigoPqrs= params['codigo'];
 
-      let pqrsConsultado = pqrsService.obtener(parseInt(this.codigoPqrs));
-      if (pqrsConsultado != undefined){
-        this.pqrs = pqrsConsultado;
-      }
+      this.pacienteService.detallePQRS(parseInt(this.codigoPqrs)).subscribe({
+        next: data =>{
+          this.pqrs = data.respuesta;
+        },
+        error: error =>{
+          this.alertaPaciente= {mensaje: error.error.respuesta, tipo: "danger"};
+        }
+      })
     });
 
   }

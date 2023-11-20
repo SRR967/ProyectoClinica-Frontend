@@ -1,5 +1,15 @@
-<p>{{pqrs | json}}</p>
+<div class="card-body p-5">
+    <!-- Mostrar detalles del PQRS si existe -->
+    <div *ngIf="pqrs">
+      <label>Código PQRS:</label>
+      <p>{{pqrs.idPQRS}}</p>
 
-<div>
-    <p>{{pqrs?.asunto}}</p>
+      <label>Asunto:</label>
+      <p>{{pqrs.asunto}}</p>
+
+      <label>Fecha de creación:</label>
+      <p>{{pqrs.fechaCreacion | date:'medium'}}</p>
+
+      <!-- Agrega más etiquetas y datos según sea necesario -->
+
 </div>

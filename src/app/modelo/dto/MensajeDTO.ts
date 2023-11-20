@@ -1,4 +1,5 @@
-export class MensajeDTO {
-  error: boolean = false;
-  respuesta: string = "";
+export interface MensajeDTO {
+  error: boolean;
+  respuesta: any;
 }
+
