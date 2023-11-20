@@ -22,7 +22,6 @@ import { UsuarioInterceptor } from './interceptor/usuario.interceptor';
     RegistroComponent,
     RecuperarContrasenaComponent,
     CrearPQRSComponent,
-    ImagenesComponent,
     AlertaComponent
   ],
 

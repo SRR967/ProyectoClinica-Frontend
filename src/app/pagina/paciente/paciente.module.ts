@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { AlertaPacienteComponent } from './alerta-paciente/alerta-paciente.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UsuarioInterceptor } from 'src/app/interceptor/usuario.interceptor';
+import { ImagenesComponent } from '../imagenes/imagenes.component';
 
 
 const routes: Routes = [
@@ -38,7 +39,8 @@ const routes: Routes = [
     PacienteInicioComponent,
     DetallePqrsComponent,
     CrearCitaComponent,
-    AlertaPacienteComponent
+    AlertaPacienteComponent,
+    ImagenesComponent
   ],
   imports: [
     CommonModule,
