@@ -1,1 +1,29 @@
-<p>radicar-consulta works!</p>
+<div>
+    <h2>Radicar Consulta</h2>
+    <form (ngSubmit)="radicarConsulta()">
+      <div class="mb-3">
+        <label for="sintomas" class="form-label">Síntomas:</label>
+        <textarea class="form-control" id="sintomas" name="sintomas" [(ngModel)]="atenderConsulta.sintomas" required></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="diagnostico" class="form-label">Diagnóstico:</label>
+        <textarea class="form-control" id="diagnostico" name="diagnostico" [(ngModel)]="atenderConsulta.diagnostico" required></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="tratamiento" class="form-label">Tratamiento:</label>
+        <textarea class="form-control" id="tratamiento" name="tratamiento" [(ngModel)]="atenderConsulta.tratamiento" required></textarea>
+      </div>
+  
+      <div class="mb-3">
+        <label for="notas" class="form-label">Notas:</label>
+        <textarea class="form-control" id="notas" name="notas" [(ngModel)]="atenderConsulta.notas" required></textarea>
+      </div>
+  
+      <button (click)="radicarConsulta()" type="submit" class="btn btn-primary">Radicar Consulta</button>
+      <app-alerta-medico [alertaMedico]="alertaMedico"></app-alerta-medico>
+
+    </form>
+  </div>
+  
