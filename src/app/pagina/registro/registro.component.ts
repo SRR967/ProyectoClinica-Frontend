@@ -15,9 +15,9 @@ import { ImagenService } from 'src/app/servicios/imagen.service';
 export class RegistroComponent {
 
   crearPacienteDto: CrearPacienteDto
-  ciudad:ItemListasDto[];
-  eps:ItemListasDto[];
-  tipoSangre:ItemListasDto[];
+  ciudad:string[];
+  eps:string[];
+  tipoSangre:string[];
   archivos!:FileList;
   alerta!:Alerta
 
