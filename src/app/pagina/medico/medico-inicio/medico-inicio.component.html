@@ -5,6 +5,7 @@
             <button  (click)="mostrarComponenteBody()" class="btn-menu" type="menu">Inicio</button>
             <button (click)="mostrarComponenteListaConsultas()" class="btn-menu" type="menu">Historial</button>
             <button (click)="mostrarComponenteDisponibilidad()" class="btn-menu" type="menu">Disponibilidad</button>
+            <button (click)="mostrarComponenteDiasLibres()" >Ver dias libres</button>
 
             <div class="abajo" >
                 <button class="btn-function" type="menu">Cerrar Sesión</button>
@@ -27,6 +28,10 @@
 
         <div>
           <app-registrar-dia-libre *ngIf="mostrarDisponibilidad"></app-registrar-dia-libre>
+        </div>
+
+        <div>
+          <app-ver-dias-libres *ngIf="mostrarDiasLibres"></app-ver-dias-libres>
         </div>
 
 

@@ -18,6 +18,7 @@ import { ListarCitasMedicoComponent } from './pagina/medico/listar-citas/listar-
 import { DetalleCitaMedicoComponent } from './pagina/medico/detalle-cita/detalle-cita.component';
 import { RadicarConsultaComponent } from './pagina/medico/radicar-consulta/radicar-consulta.component';
 import { CitasAtendidasComponent } from './pagina/medico/citas-atendidas/citas-atendidas.component';
+import { VerDiasLibresComponent } from './pagina/medico/ver-dias-libres/ver-dias-libres.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'/inicio', pathMatch: 'full'},
@@ -67,6 +68,10 @@ const routes: Routes = [
   } },
 
   {path: "historialConsultas/:codigo", component: CitasAtendidasComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["medico"]
+  } },
+
+  {path: "listarDiaMedico/:codigo", component: VerDiasLibresComponent, canActivate: [RolesGuard], data: {
     expectedRole: ["medico"]
   } },
 

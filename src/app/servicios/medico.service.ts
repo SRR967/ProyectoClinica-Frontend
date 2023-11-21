@@ -33,7 +33,7 @@ export class MedicoService {
   }
 
   public getVerDiasLibres(cedula: string): Observable<MensajeDTO>{
-    return this.http.get<MensajeDTO>(`${this.URL}/getVerDiasLibres/${cedula}`);
+    return this.http.get<MensajeDTO>(`${this.URL}/verDiasLibres/${cedula}`);
   }
 
   public registrarDiaLibre(diaLibre: DiaLibreDTO): Observable<MensajeDTO> {

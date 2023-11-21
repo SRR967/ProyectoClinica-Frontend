@@ -10,6 +10,7 @@ export class MedicoInicioComponent {
   mostrarListaCitas: boolean=false;
   mostrarListaConsultas: boolean=false;
   mostrarDisponibilidad: boolean= false;
+  mostrarDiasLibres: boolean=false;
 
   mostrarComponenteBody(){
     this.settearFalse();
@@ -31,11 +32,17 @@ export class MedicoInicioComponent {
     this.mostrarDisponibilidad= true;
   }
 
+  mostrarComponenteDiasLibres(){
+    this.settearFalse();
+    this.mostrarDiasLibres= true;
+  }
+
   settearFalse(){
     this.mostrarInicioMedicoBody = false;
     this.mostrarListaCitas = false;
     this.mostrarListaConsultas = false;
     this.mostrarDisponibilidad = false;
+    this.mostrarDiasLibres= false;
     
   }
 
