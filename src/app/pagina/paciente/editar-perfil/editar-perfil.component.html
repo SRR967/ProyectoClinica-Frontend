@@ -39,7 +39,7 @@
                 <div class="form-floating mb-3">
                     <select name="ciudad" required class="form-control" placeholder="" [(ngModel)]="editarPerfil.ciudad">
                         <option value="" selected>Seleccione una ciudad</option>
-                        <option *ngFor="let item of ciudad; index as i" [value]="item.nombre" [selected]="item.nombre === editarPerfil.ciudad">{{item.nombre}}</option>
+                        <option *ngFor="let item of ciudad; index as i" [value]="item" [selected]="item === editarPerfil.ciudad">{{item}}</option>
                     </select>
                     <label for="floatingInput">Ciudad </label>
                 </div>
@@ -48,7 +48,7 @@
                 <div class="form-floating mb-3">
                     <select name="eps" required [(ngModel)]="editarPerfil.eps" class="form-control" placeholder="">
                         <option value="" selected>Seleccione una EPS</option>
-                        <option *ngFor="let item of eps; index as i" [value]="item.nombre" [selected]="item.nombre === editarPerfil.eps">{{item.nombre}}</option>
+                        <option *ngFor="let item of eps; index as i" [value]="item" [selected]="item === editarPerfil.eps">{{item}}</option>
                     </select>
                     <label for="floatingInput">EPS </label>
                 </div>
@@ -56,7 +56,7 @@
                 <div class="form-floating mb-3">
                     <select name="tipoSangre" required [(ngModel)]="editarPerfil.tipoSangre" class="form-control" placeholder="">
                         <option value="" selected>Seleccione un tipo de sangre</option>
-                        <option *ngFor="let item of tipoSangre; index as i" [value]="item.nombre" [selected]="item.nombre === editarPerfil.tipoSangre">{{item.nombre}}</option>
+                        <option *ngFor="let item of tipoSangre; index as i" [value]="item" [selected]="item === editarPerfil.tipoSangre">{{item}}</option>
                     </select>
                     <label for="floatingInput">Tipo de sangre </label>
                 </div>
