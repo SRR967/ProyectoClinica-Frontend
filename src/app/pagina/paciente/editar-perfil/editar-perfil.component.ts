@@ -17,9 +17,9 @@ export class EditarPerfilComponent {
 
   editarPerfil: ActualizarPacienteDTO;
   alertaPaciente!:Alerta
-  ciudad:ItemListasDto[];
-  eps:ItemListasDto[];
-  tipoSangre:ItemListasDto[];
+  ciudad:string[];
+  eps:string[];
+  tipoSangre:string[];
   archivos!:FileList;
 
   constructor(private tokenService: TokenService, private pacienteService: PacienteService, private imagenService: ImagenService, private clinicaService: ClinicaService){
