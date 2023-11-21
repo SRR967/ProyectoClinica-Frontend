@@ -1,1 +1,21 @@
-<p>registrar-dia-libre works!</p>
+<head>
+  <title>Formulario de Asignación de Día Libre</title>
+</head>
+<body>
+
+  <h2>Asignación de Día Libre</h2>
+
+  <form id="asignarDiaLibreForm" >
+    <label for="idMedico">ID del Médico:</label>
+    <input type="text" id="idMedico" name="idMedico" required [(ngModel)]="diaLibre.idMedico" disabled="true">
+
+    <label for="fecha">Fecha del Día Libre:</label>
+    <input type="date" id="fecha" name="fecha" required [(ngModel)]="diaLibre.fecha">
+
+    <button class="btn-customize-pr"
+     (click)="registrarDiaLibre()" type="submit">Asignar Día Libre</button>
+  </form>
+  <app-alerta-medico [alertaMedico]="alertaMedico"></app-alerta-medico>
+
+</body>
+
