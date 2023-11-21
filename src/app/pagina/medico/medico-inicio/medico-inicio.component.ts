@@ -32,7 +32,6 @@ export class MedicoInicioComponent {
   }
 
   settearFalse(){
-
     this.mostrarInicioMedicoBody = false;
     this.mostrarListaCitas = false;
     this.mostrarListaConsultas = false;
