@@ -18,8 +18,6 @@ export class ListarCitasMedicoComponent  {
     this.getListarCitas();
   }
 
-
-
   public getListarCitas(){  
     let cedula = this.tokenService.getCodigo();
 
