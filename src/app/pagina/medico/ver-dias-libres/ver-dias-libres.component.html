@@ -12,15 +12,19 @@
       <table class="table table-striped table-hover">
         <thead>
           <tr>
-          <th>Cedula</th>
+          <th>Id</th>
             <th>fecha</th>
+            <th>estado</th>
+            <th>cedula</th>
             
           </tr>
         </thead>
         <tbody class="table-group-divider">
           <tr *ngFor="let dia of verDiasLibres">
-              <td><p>{{dia.idMedico}}</p></td>
+              <td><p>{{dia.id}}</p></td>
             <td><p>{{dia.fecha}}</p></td>
+            <td><p>{{dia.estadoDiaLibre}}</p></td>
+            <td><p>{{dia.idMedico}}</p></td>
           </tr>
         </tbody>
       </table>

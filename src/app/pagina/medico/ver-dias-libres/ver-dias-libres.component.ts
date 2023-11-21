@@ -3,6 +3,7 @@ import { MedicoService } from '../../../servicios/medico.service';
 import { DiaLibreDTO } from 'src/app/modelo/dto/medico/DiaLibreDto';
 import { TokenService } from 'src/app/servicios/token.service';
 import { Alerta } from 'src/app/modelo/alerta';
+import { ItemDiaLibre } from 'src/app/modelo/dto/medico/ItemDiaLibre';
 
 @Component({
   selector: 'app-ver-dias-libres',
@@ -11,7 +12,7 @@ import { Alerta } from 'src/app/modelo/alerta';
 })
 export class VerDiasLibresComponent {
 
-  verDiasLibres: DiaLibreDTO[]=[]
+  verDiasLibres: ItemDiaLibre[]=[]
   alertaMedico!:Alerta
 
 
