@@ -1,5 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { MedicoService } from '../../../servicios/medico.service';
+import { DiaLibreDTO } from 'src/app/modelo/dto/medico/DiaLibreDto';
+import { TokenService } from 'src/app/servicios/token.service';
+import { Alerta } from 'src/app/modelo/alerta';
 
 @Component({
   selector: 'app-ver-dias-libres',
@@ -8,25 +11,25 @@ import { MedicoService } from '../../../servicios/medico.service';
 })
 export class VerDiasLibresComponent {
 
-  verDiasLibres: any[]=[]
-
-  @Input('cedula') cedula: any
-
-  constructor(public medicoService: MedicoService) {}
+  verDiasLibres: DiaLibreDTO[]=[]
+  alertaMedico!:Alerta
 
 
-  ngOnInit(): void {
-  
+  constructor(private medicoService: MedicoService, private tokenService: TokenService) {
+    this.getVerDiasLibres();
   }
 
-  getVerDiasLibres(){  
-    this.medicoService.getVerDiasLibres(this.cedula).subscribe({
-      next: (res: any[]) => {
-        this.verDiasLibres = res;
+
+  getVerDiasLibres(){
+    let cedula = this.tokenService.getCodigo();
+
+    this.medicoService.getVerDiasLibres(cedula).subscribe({
+      next: data => {
+        this.verDiasLibres = data.respuesta;
       },
-      error: () => {
-        this.verDiasLibres = [];
-      },
+      error: error => {
+        this.alertaMedico={mensaje:error.error.respuesta,tipo:"danger"};
+      }
   });
 }
 }

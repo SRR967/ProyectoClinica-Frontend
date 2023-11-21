@@ -1,0 +1,5 @@
+<div *ngIf="alertaMedico" class="alert alert-{{alertaMedico.tipo}} mt-3 alert-dismissible d-block" >
+    {{alertaMedico.mensaje}}
+    <button type="button" class="btn-close" aria-label="Close" (click)="ocultar()" ></button>
+</div>
+

@@ -14,6 +14,8 @@ import { ListarCitasComponent } from './pagina/paciente/listar-citas/listar-cita
 import { DetalleCitaComponent } from './pagina/paciente/detalle-cita/detalle-cita.component';
 import { DetalleConsultaComponent } from './pagina/paciente/detalle-consulta/detalle-consulta.component';
 import { ListarConsultasComponent } from './pagina/paciente/listar-consultas/listar-consultas.component';
+import { ListarCitasMedicoComponent } from './pagina/medico/listar-citas/listar-citas.component';
+import { DetalleCitaMedicoComponent } from './pagina/medico/detalle-cita/detalle-cita.component';
 
 const routes: Routes = [
   {path: '', redirectTo:'/inicio', pathMatch: 'full'},
@@ -48,7 +50,17 @@ const routes: Routes = [
 
   {path: "detalleConsulta/:codigo", component: DetalleConsultaComponent, canActivate: [RolesGuard], data: {
     expectedRole: ["paciente"]
-  } }
+  } },
+
+  {path: "listarCitasMedico", component: ListarCitasMedicoComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["medico"]
+  } },
+
+  {path: "detalleCitaMedico/:codigo", component: DetalleCitaMedicoComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["medico"]
+  } },
+
+
 
 ];
 

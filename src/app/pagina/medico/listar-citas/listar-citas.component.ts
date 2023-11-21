@@ -1,31 +1,37 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MedicoService } from '../../../servicios/medico.service';
+import { TokenService } from 'src/app/servicios/token.service';
+import { CitasMedicoDTO } from 'src/app/modelo/dto/medico/CitasMedicoDto';
+import { Alerta } from 'src/app/modelo/alerta';
 
 @Component({
   selector: 'app-listar-citas',
   templateUrl: './listar-citas.component.html',
   styleUrls: ['./listar-citas.component.css']
 })
-export class ListarCitasComponent implements OnInit {
-  listarCitas: any[]=[]
-
-  @Input('cedula') cedula: any
-
-  constructor(public medicoService: MedicoService) {}
+export class ListarCitasMedicoComponent  {
+  listarCitas: CitasMedicoDTO[]=[]
+  alertaMedico!:Alerta
 
 
-  ngOnInit(): void {
-  
+  constructor(private medicoService: MedicoService, private tokenService: TokenService) {
+    this.getListarCitas();
   }
 
-  getListarCitas(){  
-    this.medicoService.getListarCitas(this.cedula).subscribe({
-      next: (res: any[]) => {
-        this.listarCitas = res;
+
+
+  public getListarCitas(){  
+    let cedula = this.tokenService.getCodigo();
+
+    this.medicoService.listarCitas(cedula).subscribe({
+      next: data => {
+        this.listarCitas = data.respuesta;
       },
-      error: () => {
-        this.listarCitas = [];
-      },
-  });
-}
+      error: error => {
+        this.alertaMedico={mensaje:error.error.respuesta,tipo:"danger"};
+      }
+    });
+  }
+
+  
 }
