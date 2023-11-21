@@ -16,7 +16,7 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class CrearCitaComponent {
 
   registroCitaDto: RegistroCitaDTO;
-  especialidad: ItemListasDto[];
+  especialidad: string[]=[];
   alertaPaciente!:Alerta
   medico: ItemMedicoDto[]=[];
   seleccion: string;
@@ -24,7 +24,6 @@ export class CrearCitaComponent {
 
   constructor(private clinicaService: ClinicaService, private pacienteService: PacienteService, private tokenService: TokenService){
     this.seleccion = "";
-    this.especialidad = [];
     this.cargarEspecialidades();
     this.registroCitaDto = new RegistroCitaDTO();
     
@@ -71,7 +70,6 @@ export class CrearCitaComponent {
 
   onSeleccionCambio(){
     this.medico = [];
-    this.seleccion;
     console.log(this.seleccion);
     this.listarMedicos();
   }

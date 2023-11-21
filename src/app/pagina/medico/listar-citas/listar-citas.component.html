@@ -28,10 +28,12 @@
               <td><p>{{cita.idPaciente}}</p></td>
               <td><p>{{cita.hora}}</p></td>
               <td><p>{{cita.motivo}}</p></td>
-              <td><a routerLink="/detalleCitaMedico/{{cita.idCita}}"><i class="fa-solid fa-circle-info me-2"></i>Ver detalle</a></td>
+              <td><a routerLink="/atender/{{cita.idCita}}"><i class="fa-solid fa-circle-info me-2"></i>Atender</a></td>
             </tr>
           </tbody>
         </table>
+        <app-alerta-medico [alertaMedico]="alertaMedico"></app-alerta-medico>
+
       </div>
     </div>
   </div>
