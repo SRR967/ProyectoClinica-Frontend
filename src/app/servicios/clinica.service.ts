@@ -36,4 +36,9 @@ export class ClinicaService {
     return this.http.get<MensajeDTO>(`${this.clinicaURL}/listar-tipoPQRS`);
   }
 
+  public listarEstadoDia(): Observable<MensajeDTO>{
+    return this.http.get<MensajeDTO>(`${this.clinicaURL}/listar-estadoDia`);
+  }
+
+
 }

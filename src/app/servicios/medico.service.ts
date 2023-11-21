@@ -39,4 +39,6 @@ export class MedicoService {
   public registrarDiaLibre(diaLibre: DiaLibreDTO): Observable<MensajeDTO> {
     return this.http.post<MensajeDTO>(`${this.URL}/asignarDiaLibre`, diaLibre);
   }
+
+  
 }

@@ -4,6 +4,7 @@ import { DiaLibreDTO } from 'src/app/modelo/dto/medico/DiaLibreDto';
 import { TokenService } from 'src/app/servicios/token.service';
 import { Alerta } from 'src/app/modelo/alerta';
 import { ItemDiaLibre } from 'src/app/modelo/dto/medico/ItemDiaLibre';
+import { ClinicaService } from 'src/app/servicios/clinica.service';
 
 @Component({
   selector: 'app-ver-dias-libres',
@@ -14,9 +15,10 @@ export class VerDiasLibresComponent {
 
   verDiasLibres: ItemDiaLibre[]=[]
   alertaMedico!:Alerta
+  dia: number=0;
 
 
-  constructor(private medicoService: MedicoService, private tokenService: TokenService) {
+  constructor(private medicoService: MedicoService, private tokenService: TokenService, private clinicaService:ClinicaService) {
     this.getVerDiasLibres();
   }
 
@@ -33,4 +35,7 @@ export class VerDiasLibresComponent {
       }
   });
 }
+
+  
+
 }
