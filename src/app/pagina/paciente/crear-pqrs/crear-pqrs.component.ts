@@ -16,7 +16,7 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class CrearPQRSComponent {
   
   crearPqrsDto: CrearPQRSDTO;
-  tipoPqrs: ItemListasDto[]=[];
+  tipoPqrs: string[]=[];
   alertaPaciente!:Alerta
   consultaPacienteDto: ConsultaPacienteDTO[]=[];
 

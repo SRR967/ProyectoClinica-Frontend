@@ -10,7 +10,7 @@
                     <select name="tipoPqrs" required class="form-select" [(ngModel)]="crearPqrsDto.tipoPQRS">
 
                         <option value="" selected>Seleccione un tipo</option>
-                        <option [value]="item" *ngFor="let item of tipoPqrs; index as i" >{{item.nombre}}</option>
+                        <option [value]="item" *ngFor="let item of tipoPqrs; index as i" >{{item}}</option>
 
                     </select>
                 </div>
