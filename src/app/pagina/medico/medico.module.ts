@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CitasPendientesComponent } from './citas-pendientes/citas-pendientes.component';
-import { ListarCitasComponent } from './listar-citas/listar-citas.component';
-import { DetalleCitaComponent } from './detalle-cita/detalle-cita.component';
+import { ListarCitasMedicoComponent } from './listar-citas/listar-citas.component';
+import { DetalleCitaMedicoComponent } from './detalle-cita/detalle-cita.component';
 import { RadicarConsultaComponent } from './radicar-consulta/radicar-consulta.component';
 import { CitasAtendidasComponent } from './citas-atendidas/citas-atendidas.component';
 import { RegistrarDiaLibreComponent } from './registrar-dia-libre/registrar-dia-libre.component';
@@ -13,6 +13,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UsuarioInterceptor } from 'src/app/interceptor/usuario.interceptor';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AlertaMedicoComponent } from './alerta-medico/alerta-medico.component';
 
 
 const routes: Routes= [
@@ -22,14 +23,15 @@ const routes: Routes= [
 @NgModule({
   declarations: [
     CitasPendientesComponent,
-    ListarCitasComponent,
-    DetalleCitaComponent,
+    ListarCitasMedicoComponent,
+    DetalleCitaMedicoComponent,
     RadicarConsultaComponent,
     CitasAtendidasComponent,
     RegistrarDiaLibreComponent,
     VerDiasLibresComponent,
     MedicoInicioBodyComponent,
-    MedicoInicioComponent
+    MedicoInicioComponent,
+    AlertaMedicoComponent
   ],
   imports: [
     CommonModule,

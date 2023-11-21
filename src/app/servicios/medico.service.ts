@@ -2,33 +2,41 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { DiaLibreDTO } from '../modelo/dto/medico/DiaLibreDto';
+import { MensajeDTO } from '../modelo/dto/MensajeDTO';
+import { AtenderCitaDTO } from '../modelo/dto/AtenderCitaDTO';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MedicoService {
-  URL= 'http://localhost:3000/api'
+  URL= 'http://localhost:8080/api/medicos'
   constructor(private http: HttpClient) { }
 
 
-  public getCitasAtendidas(cedula: string): Observable<any>{
-    return this.http.get(`${this.URL}/getCitasAtendidas/${cedula}`);
+  public verCitasPendientes(cedula: string): Observable<MensajeDTO>{
+    return this.http.get<MensajeDTO>(`${this.URL}/citas-pendientes/${cedula}`);
   }
-  public getCitasPendientes(cedula: string): Observable<any>{
-    return this.http.get(`${this.URL}/getCitasPendientes/${cedula}`);
-  }
-  public getDetalleCita(cedula: string): Observable<any>{
-    return this.http.get(`${this.URL}/getDetalleCita/${cedula}`);
-  }
-  public getListarCitas(cedula: string): Observable<any>{
-    return this.http.get(`${this.URL}/getListarCitas/${cedula}`);
-  }
-  public getVerDiasLibres(cedula: string): Observable<any>{
-    return this.http.get(`${this.URL}/getVerDiasLibres/${cedula}`);
+  public verDetalleCita(codigo: number): Observable<MensajeDTO>{
+    return this.http.get<MensajeDTO>(`${this.URL}/detalle-cita/${codigo}`);
   }
 
-  registrarDiaLibre(diaLibre: DiaLibreDTO): Observable<any> {
-    let params = JSON.stringify(diaLibre);
-    return this.http.post(`${this.URL}/registrarDiaLibre/`, params);
+  public radicarConsulta(cita:AtenderCitaDTO): Observable<MensajeDTO>{
+    return this.http.post<MensajeDTO>(`${this.URL}/radicar-consulta`,cita);
+  }
+
+  public listarCitas(cedula: string): Observable<MensajeDTO>{
+    return this.http.get<MensajeDTO>(`${this.URL}/listar-citas/${cedula}`);
+  }
+
+  public listarCitasAtendidas(cedula:string): Observable<MensajeDTO>{
+    return this.http.get<MensajeDTO>(`${this.URL}/citas-atendidas/${cedula}`);
+  }
+
+  public getVerDiasLibres(cedula: string): Observable<MensajeDTO>{
+    return this.http.get<MensajeDTO>(`${this.URL}/getVerDiasLibres/${cedula}`);
+  }
+
+  public registrarDiaLibre(diaLibre: DiaLibreDTO): Observable<MensajeDTO> {
+    return this.http.post<MensajeDTO>(`${this.URL}/registrarDiaLibre/`, diaLibre);
   }
 }
