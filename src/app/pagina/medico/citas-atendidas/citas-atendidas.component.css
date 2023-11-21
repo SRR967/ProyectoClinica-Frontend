@@ -1,0 +1,16 @@
+.head-window{
+    width: 100%;
+    align-items: center;
+    margin: 5px auto 15px;
+    display: flex;
+}
+
+.title-window{
+    font-size: 40px;
+    font-weight: 200;
+    text-align: left;
+    padding: 0 30px;
+    width: 92%;
+    color: #006E0E;
+    display: inline-block;
+}

@@ -9,7 +9,9 @@ const TOKEN_KEY = "AuthToken";
 })
 export class TokenService {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+    console.log("Token inicializado");
+  }
 
   public setToken(token: string) {
     window.sessionStorage.removeItem(TOKEN_KEY);
@@ -29,9 +31,18 @@ export class TokenService {
 
   public login(token:string){
     this.setToken(token);
-    this.router.navigate(["/"]).then(()=> {
+    const roles:string[] = this.getRole();
+    let rolPaciente:string = "paciente"
+    if(roles.includes(rolPaciente)){
+      this.router.navigate(["/pacienteInicio"]).then(()=> {
       window.location.reload();
     });
+    }else{
+      this.router.navigate(["/medicoInicio"]).then(()=> {
+      window.location.reload();
+    });
+    }
+    
   }
 
   public logout() {
@@ -45,7 +56,7 @@ export class TokenService {
     const token= this.getToken();
     if(token){
       const values = this.decodePayload(token);
-      return values.codigo;
+      return values.id;
     }
     return "";
   }
@@ -56,6 +67,15 @@ export class TokenService {
       const values = this.decodePayload(token);
       return values.sub;
     } 
+    return "";
+  }
+
+  public getNombre(): string{
+    const token = this.getToken();
+    if(token){
+      const values = this.decodePayload(token);
+      return values.nombre;
+    }
     return "";
   }
 

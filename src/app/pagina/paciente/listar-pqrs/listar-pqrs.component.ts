@@ -5,6 +5,7 @@ import { Alerta } from 'src/app/modelo/alerta';
 import { PacienteService } from 'src/app/servicios/paciente.service';
 import { PqrsService } from 'src/app/servicios/pqrs.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-pqrs',
@@ -14,10 +15,11 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class ListarPQRSComponent {
 
   pqrs: PqrsPacienteDto[];
-  alerta!:Alerta
+  alertaPaciente!:Alerta
 
-  constructor(private pacienteService: PacienteService, private tokenService: TokenService){
+  constructor(private pacienteService: PacienteService, private tokenService: TokenService, private router:Router){
     this.pqrs = [];
+    this.obtenerPQRS();
   }
 
   public obtenerPQRS(){
@@ -28,9 +30,13 @@ export class ListarPQRSComponent {
         this.pqrs = data.respuesta;
       },
       error: error => {
-        this.alerta= {mensaje: error.error.respuesta, tipo: "danger"};
+        this.alertaPaciente= {mensaje: error.error.respuesta, tipo: "danger"};
       }
     });
+  }
+
+  public detallePQRS(codigo: number){
+    this.router.navigate([]);
   }
 
 }

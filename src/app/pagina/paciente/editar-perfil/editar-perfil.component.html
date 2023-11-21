@@ -1,1 +1,94 @@
-<p>editar-perfil works!</p>
+<form #f="ngForm">
+
+    <div class="container">
+        <div class="container text-center">
+            <div class="row align-items-start">
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" name="nombre" class="form-control" placeholder="" 
+                    required="true" [(ngModel)]="editarPerfil.nombre"  disabled="true"/>
+                    <label for="floatingInput">Nombre </label>
+                </div>
+            
+                <div class="form-floating mb-3">
+                    <input type="text" name="apellido" required="true" class="form-control" placeholder=""
+                     [(ngModel)]="editarPerfil.apellido" disabled="true" />
+                    <label for="floatingInput">Apellido </label>
+                </div>
+
+                <div class="form-floating mb-3" >
+                    <input type="email" name="correo" email="true" class="form-control" placeholder=""
+                    required="true"  [(ngModel)]="editarPerfil.email" disabled="true" />
+                    <label for="floatingInput" >Email </label>
+                </div>
+                
+                
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="floatingInput" placeholder="name@example.com" name="cedula" 
+                    required="true" [(ngModel)]="editarPerfil.cedula" disabled="true" />
+                    <label for="floatingInput">Cedula</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <input type="number" name="telefono" class="form-control" placeholder=""
+                    required="true" [(ngModel)]="editarPerfil.telefono" />
+                    <label for="floatingInput" >Teléfono </label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <select name="ciudad" required class="form-control" placeholder="" [(ngModel)]="editarPerfil.ciudad">
+                        <option value="" selected>Seleccione una ciudad</option>
+                        <option *ngFor="let item of ciudad; index as i" [value]="item.nombre" [selected]="item.nombre === editarPerfil.ciudad">{{item.nombre}}</option>
+                    </select>
+                    <label for="floatingInput">Ciudad </label>
+                </div>
+                  
+
+                <div class="form-floating mb-3">
+                    <select name="eps" required [(ngModel)]="editarPerfil.eps" class="form-control" placeholder="">
+                        <option value="" selected>Seleccione una EPS</option>
+                        <option *ngFor="let item of eps; index as i" [value]="item.nombre" [selected]="item.nombre === editarPerfil.eps">{{item.nombre}}</option>
+                    </select>
+                    <label for="floatingInput">EPS </label>
+                </div>
+
+                <div class="form-floating mb-3">
+                    <select name="tipoSangre" required [(ngModel)]="editarPerfil.tipoSangre" class="form-control" placeholder="">
+                        <option value="" selected>Seleccione un tipo de sangre</option>
+                        <option *ngFor="let item of tipoSangre; index as i" [value]="item.nombre" [selected]="item.nombre === editarPerfil.tipoSangre">{{item.nombre}}</option>
+                    </select>
+                    <label for="floatingInput">Tipo de sangre </label>
+                </div>
+                
+
+                <div class="form-floating mb-3" >
+                    <input type="text" name="alergias" class="form-control" placeholder=""
+                    required="true" [(ngModel)]="editarPerfil.alergias" />
+                    <label for="floatingInput" >Alergias </label>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="form-floating mb-3" >
+                    <input type="file" name="foto" class="form-control" placeholder=""
+                    (change)="onFileChange($event)" />
+                    <label for="floatingInput" >Foto </label>
+                    <button class="btn-customize-pr" type="submit" [disabled]="archivos == null" 
+                    (click)="subirImagen()" >Subir Imagen</button>
+            
+                </div>
+        
+            </div>
+        </div>     
+        </div>
+    
+        <div  class="container text-center">
+            <button class="btn-customize-pr" type="submit" [disabled]="f.invalid"
+            (click)="guardarCambios()" >Registrarse</button>
+        </div>
+        <app-alerta-paciente [alertaPaciente]="alertaPaciente"></app-alerta-paciente>
+    </div>
+</div>
+    
+</form>

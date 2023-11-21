@@ -1,1 +1,12 @@
-<p>detalle-consulta works!</p>
+<div *ngIf="detalleConsulta">
+    <h2>Detalles de la consulta</h2>
+    <p>Código: {{ detalleConsulta.idConsulta }}</p>
+    <p>Fecha consulta: {{ detalleConsulta.fechaConsulta }}</p>
+    <p>Especialidad: {{detalleConsulta.especialidad}}</p>
+    <p>Doctor: {{detalleConsulta.nombreMedico}}</p>
+    <p>Fecha Solicitud: {{detalleConsulta.fechaSolicitud}}</p>
+    <p>Motivo: {{detalleConsulta.motivo}}</p>
+    <p>Diagnostico: {{detalleConsulta.diagnostico}}</p>
+    <p>Tratamiento: {{detalleConsulta.tratamiento}}</p>
+  </div>
+  

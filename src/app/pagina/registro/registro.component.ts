@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Alerta } from 'src/app/modelo/alerta';
+import { ItemListasDto } from 'src/app/modelo/dto/ItemListasDto';
 import { CrearPacienteDto } from 'src/app/modelo/dto/paciente/crear-paciente-dto';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { ClinicaService } from 'src/app/servicios/clinica.service';
@@ -14,7 +15,7 @@ import { ImagenService } from 'src/app/servicios/imagen.service';
 export class RegistroComponent {
 
   crearPacienteDto: CrearPacienteDto
-  ciudad:String[];
+  ciudad:string[];
   eps:string[];
   tipoSangre:string[];
   archivos!:FileList;
@@ -59,7 +60,7 @@ export class RegistroComponent {
         this.ciudad = data.respuesta;
       },
       error: error =>{
-        console.log(error)
+        this.alerta = {mensaje: error.error.respuesta, tipo: "danger"};
       }
     });
   }
