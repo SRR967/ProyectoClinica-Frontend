@@ -2,9 +2,9 @@
     <div class="row align-items-start">
       <div class="col-2">
         <div class="body-function">
-            <button  (click)="mostrarComponenteBody" class="btn-menu" type="menu">Inicio</button>
-            <button (click)="mostrarComponenteListaConsultas" class="btn-menu" type="menu">Historial</button>
-            <button class="btn-menu" type="menu">Disponibilidad</button>
+            <button  (click)="mostrarComponenteBody()" class="btn-menu" type="menu">Inicio</button>
+            <button (click)="mostrarComponenteListaConsultas()" class="btn-menu" type="menu">Historial</button>
+            <button (click)="mostrarComponenteDisponibilidad()" class="btn-menu" type="menu">Disponibilidad</button>
 
             <div class="abajo" >
                 <button class="btn-function" type="menu">Cerrar Sesión</button>
@@ -18,10 +18,15 @@
       <div class="col-10">
 
         <div>
-            <app-medico-inicio-body *ngIf="mostrarComponenteBody" ></app-medico-inicio-body>
+          <app-medico-inicio-body *ngIf="mostrarInicioMedicoBody" ></app-medico-inicio-body>
         </div>
+
         <div>
-          <app-citas-atendidas *ngIf="mostrarComponenteListaConsultas" ></app-citas-atendidas>
+          <app-citas-atendidas *ngIf="mostrarListaConsultas" ></app-citas-atendidas>
+        </div>
+
+        <div>
+          <app-registrar-dia-libre *ngIf="mostrarDisponibilidad"></app-registrar-dia-libre>
         </div>
 
 
