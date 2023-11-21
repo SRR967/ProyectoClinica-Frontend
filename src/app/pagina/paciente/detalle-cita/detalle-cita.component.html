@@ -1,10 +1,59 @@
-<div *ngIf="detalleCita">
-    <h2>Detalles de la cita</h2>
-    <p>Código: {{ detalleCita.idCita }}</p>
-    <p>Fecha consulta: {{ detalleCita.fechaCita }}</p>
-    <p>Nombre Medico: {{detalleCita.nombreMedico}}</p>
-    <p>Especialidad: {{detalleCita.especialidad}}</p>
-    <p>Fecha Solicitud: {{detalleCita.fechaSolicitud}}</p>
-    <p>Motivo: {{detalleCita.motivo}}</p>
+<div>
+  <div class="head-window">
+    <div class="title-window">
+      Detalles de la Cita
+    </div>
   </div>
-  
+
+  <div class="body-window">
+    <div class="container">
+      <div class="container text-center">
+        <div class="row align-items-start">
+          <div class="col">
+
+            <div class="form-floating mb-3">
+              <input type="text" name="nombre" class="form-control" placeholder="" 
+              required="true" [(ngModel)]="detalleCita.especialidad"  disabled="true"/>
+              <label for="floatingInput">Especialidad </label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" name="nombre" class="form-control" placeholder="" 
+              required="true" [(ngModel)]="detalleCita.nombreMedico"  disabled="true"/>
+              <label for="floatingInput">Nombre del Medico: </label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" name="nombre" class="form-control" placeholder="" 
+              required="true" [(ngModel)]="detalleCita.idCita"  disabled="true"/>
+              <label for="floatingInput">Codigo de la Cita:  </label>
+            </div>
+            
+          </div>
+          <div class="col">
+
+            <div class="form-floating mb-3">
+              <input type="text" name="nombre" class="form-control" placeholder="" 
+              required="true" [(ngModel)]="detalleCita.motivo"  disabled="true"/>
+              <label for="floatingInput">Motivo </label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" name="nombre" class="form-control" placeholder="" 
+              required="true" [(ngModel)]="detalleCita.fechaCita"  disabled="true"/>
+              <label for="floatingInput">Dia de la Cita: </label>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" name="nombre" class="form-control" placeholder="" 
+              required="true" [(ngModel)]="detalleCita.fechaSolicitud"  disabled="true"/>
+              <label for="floatingInput">Fecha de Solicitud: </label>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
